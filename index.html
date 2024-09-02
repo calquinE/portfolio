@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="Calquin">
+    <meta name="author" content="Calquin Epullan">
+    <meta name="robots" content="index">
     <title>Calquin Epullan - Portfolio</title>
+    <link rel="icon" href="./img/icon.ico">
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,17 +22,15 @@
                 <ul class="nav-list">
                     <li><a href="#about">Sobre mí</a></li>
                     <li><a href="#portfolio">Portfolio</a></li>
-                    <li><a href="#experience">Formación</a></li>
-                    <li><a href="#testimonial">Experienca</a></li>
-                    <li><a href="#contact" class="contactinho">Contacto</a></li>
+                    <li><a href="#formacion">Formación</a></li>
+                    <li><a href="#experiencia">Experiencia</a></li>
+                    <li><a href="#contacto" class="contactinho">Contacto</a></li>
                 </ul>
-                <!-- <input type="search" placeholder="Buscar" class="search"> -->
             </nav>
             <div class="hero">
                 <h1>Hola, <br>
                     soy <span>Calquin Epullan</span></h1>
                 <p>Ingeniero de Sonido</p>
-                <!-- <button class="btn">Contactame</button> -->
                 <div class="social-icons">
                     <a href="mailto:calco.epu@gmail.com"><i class="fas fa-envelope"></i></a>
                     <a href="https://linkedin.com/in/calquin" target="_blank"><i class="fab fa-linkedin"></i></a>
@@ -41,8 +43,9 @@
     <section id="about" class="about">
         <div class="container">
             <h2>Sobre mí</h2>
-            <p>Soy una persona flexible, interesado en aprender nuevas cosas. Esta actitud me permite escuchar distintos puntos de vista y generar diferentes soluciones desde diversas perspectivas. Busco oportunidades para aplicar mis habilidades y desarrollar nuevas competencias que me impulsen a crecer personalmente y a aportar valor, con el objetivo principal de ayudar a los demás.</p>
-            <div class="video"><iframe width="853" height="480" src="https://www.youtube.com/embed/oevc88YiYz4" title="PUBLICA tu WEB GRATIS!! -  Portfolio Web desde 0 parte final" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>    
+            <p>Me considero una persona flexible, interesado en aprender nuevas cosas. Esto me permite escuchar distintos puntos de vista y generar diferentes soluciones desde diversas perspectivas. Busco oportunidades para aplicar mis habilidades y desarrollar nuevas competencias que me impulsen a crecer personalmente y a aportar valor, con el objetivo principal de ayudar a los demás.</p>
+            <div class="video"><iframe width="853" height="480" src="https://www.youtube.com/embed/6JahqWjJO2I" title="Calquin Epullan - Presentación" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>
+                
         </div>
     </section>
 
@@ -82,45 +85,97 @@
 
     <section id="portfolio" class="portfolio">
         <div class="container">
-            <h2>Portafolio</h2>
+            <h2>Portfolio</h2>
             <div class="portfolio-grid">
                 <div class="portfolio-item">
-                    <img src="./img/fotito.webp" alt="Proyecto 1">
+                    <img src="./img/proyectos/generador_puls.jpg" alt="Generador Pulsado">
                     <div class="overlay">
                         <div class="text">
-                            <h3>Proyecto 1</h3>
-                            <p>Descripción breve del proyecto.</p>
-                            <a href="./pdf/comentado.pdf" class="btn" target="_blank">Ver PDF</a>
+                            <h3>Generador Pulsado</h3>
+                            <p>Modificaciones a un generador pulsado cuya frecuencia de onda senoidal como de tren de pulsos puede ser ajustada por el usuario.</p>
+                            <a href="./pdf/generador_puls.pdf" class="btn" target="_blank">Ver PDF</a>
                         </div>
                     </div>
                 </div>
                 <div class="portfolio-item">
-                    <img src="./img/fotito.webp" alt="Proyecto 2">
+                    <img src="./img/proyectos/manfred.png" alt="Manfred">
                     <div class="overlay">
                         <div class="text">
-                            <h3>Proyecto 2</h3>
-                            <p>Descripción breve del proyecto.</p>
-                            <a href="./pdf/proyecto2.pdf" class="btn" target="_blank">Ver PDF</a>
+                            <h3>Manfred</h3>
+                            <p>Grabación y edición de foley para corto animado "Manfred" (se recomienda escuchar con auriculares).</p>
+                            <a href="https://youtu.be/lHKzQQo8d7Y" class="btn" target="_blank">Ver Video</a>
                         </div>
                     </div>
                 </div>
                 <div class="portfolio-item">
-                    <img src="./img/fotito.webp" alt="Proyecto 3">
+                    <img src="./img/proyectos/soka.png" alt="Soka Gakkai">
                     <div class="overlay">
                         <div class="text">
-                            <h3>Proyecto 3</h3>
-                            <p>Descripción breve del proyecto.</p>
-                            <a href="./pdf/proyecto3.pdf" class="btn" target="_blank">Ver PDF</a>
+                            <h3>Soka Gakkai</h3>
+                            <p>Mediciones acústicas, tanto en el área de audiencia como del escenario, del Audiotorio de la Paz del Soka Gakkai de Argentina.</p>
+                            <a href="./pdf/soka.pdf" class="btn" target="_blank">Ver PDF</a>
                         </div>
                     </div>
                 </div>
-                <!-- Repite para más proyectos -->
+    
+
+                <div class="portfolio-item hidden">
+                    <img src="./img/proyectos/mapa.jpg" alt="Mapa de Ruido">
+                    <div class="overlay">
+                        <div class="text">
+                            <h3>Mapa de Ruido</h3>
+                            <p>Confección de un mapa de ruido en CadnaA de zona comercial de la ciudad de Caseros, Buenos Aires. Además, se hicieron mediciones para la validación del mismo.</p>
+                            <a href="./pdf/mapa_ruido.pdf" class="btn" target="_blank">Ver PDF</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item hidden">
+                    <img src="./img/proyectos/niccolo.png" alt="Auditorio Niccolo Paganini">
+                    <div class="overlay">
+                        <div class="text">
+                            <h3>Auditorio Niccolo Paganini</h3>
+                            <p>Modelado geométrico y acústico del auditorio Niccolo Paganini en Parma, Italia, utilizando el software EASE.</p>
+                            <a href="./pdf/niccolo.pdf" class="btn" target="_blank">Ver PDF</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="portfolio-item hidden">
+                    <img src="./img/proyectos/rir.png" alt="Procesador de RIRs">
+                    <div class="overlay">
+                        <div class="text">
+                            <h3>Procesador de RIRs</h3>
+                            <p>Desarrollo, en Python, de un programa para el cálculo de parámetros acústicos de salas a partir de respuestas al impulso.</p>
+                            <a href="./pdf/rirs.pdf" class="btn" target="_blank">Ver PDF</a>
+                        </div>
+                    </div>
+                </div>
+    
+
+                <div class="portfolio-item hidden">
+                    <!-- Dejado en blanco a propósito -->
+                </div>
+                <div class="portfolio-item hidden">
+                    <img src="./img/proyectos/directividad.png" alt="Medición de Directividad">
+                    <div class="overlay">
+                        <div class="text">
+                            <h3>Medición de Directividad</h3>
+                            <p>Análisis sobre la directividad de un sistema formado por un driver de compresión y una bocina.</p>
+                            <a href="./pdf/directividad.pdf" class="btn" target="_blank">Ver PDF</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+    
+
+            <div class="load-more-container">
+                <button id="load-more" class="load-more-btn">Cargar más proyectos <i class="fas fa-arrow-down"></i></button>
             </div>
         </div>
     </section>
     
 
-    <section id="experience" class="experience">
+    <section id="formacion" class="experience">
         <div class="container">
             <h2>Formación Académica</h2>
             <div class="timeline">
@@ -144,7 +199,7 @@
     </section>
 
 
-    <section id="testimonial" class="testimonial">
+    <section id="experiencia" class="testimonial">
         <div class="container">
             <h2>Experiencia Laboral</h2>
             <div class="timelineexp">
@@ -153,7 +208,7 @@
                     <div class="timeline-content">
                         <h3>Pasantía</h3>
                         <h4>Cooperativa de Energía Eléctrica de Zapala (Zapala, Neuquén)</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus.</p>
+                        <p>Colaboré en la ejecución de proyectos de distribución eléctrica, desde la instalación de nuevas líneas hasta la ampliación de aquellas existentes. Asistí en el mantenimiento de estas redes, garantizando el correcto suministro en áreas residenciales y comerciales. También participé en la identificación y solución de fallas técnicas, así como en la supervisión de trabajos en campo.</p>
                     </div>
                 </div>
             </div>
@@ -161,19 +216,25 @@
     </section>    
 
 
-    <section id="contact" class="contact">
+    <section id="contacto" class="contact">
         <div class="container">
             <h2>Contactame</h2>
             <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fa fa-envelope"></i>
-                    <span>calco.epu@gmail.com</span>
+                <div class="contact-row">
+                    <div class="contact-item">
+                        <i class="fa fa-envelope"></i>
+                        <a href="mailto:calco.epu@gmail.com"><span>calco.epu@gmail.com</span></a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <a href="https://linkedin.com/in/calquin" target="_blank"><span>@calquin</span></a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-whatsapp"></i>
+                        <a href="https://wa.me/5492942470249" target="_blank"><span>(+54) 2942-470249</span></a>
+                    </div>
                 </div>
-                <div class="contact-item">
-                    <i class="fa fa-phone"></i>
-                    <span>(+54) 2942-470249</span>
-                </div>
-                <div class="contact-item">
+                <div class="contact-item location">
                     <i class="fa fa-map-marker"></i>
                     <span>Buenos Aires, Argentina</span>
                 </div>
@@ -181,8 +242,38 @@
         </div>
     </section>
 
+
     <footer class="footer">
-        <p>“Gracias por visitar mi sitio web”</p>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section links">
+                    <h3>Enlaces Rápidos</h3>
+                    <div class="footer-links-columns">
+                        <ul>
+                            <li><a href="#about">Sobre mí</a></li>
+                            <li><a href="#portfolio">Portfolio</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#formacion">Formación</a></li>
+                            <li><a href="#experiencia">Experiencia</a></li>
+                        </ul>
+                        <ul>
+                            <li><a href="#contacto">Contacto</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="cielito">
+                    <button class="back-to-top" onclick="scrollToTop()">
+                        <i class="fas fa-arrow-up"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Diseñado y creado por Calquin Epullan. Todos los derechos reservados.</p>
+            </div>
+        </div>
     </footer>
+    
+    <script src="main.js"></script>
 </body>
 </html>
