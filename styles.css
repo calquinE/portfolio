@@ -339,9 +339,15 @@ body {
 }
 
 .timeline-content h4 {
-    margin: 5px 0 15px;
+    margin: 0;
     font-size: 1.2em;
     color: #f39c12;
+}
+
+.timeline-content h5 {
+    margin: 5px 0 15px;
+    font-size: 0.9em;
+    color: #ffffff;
 }
 
 .timeline-content p {
