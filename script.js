@@ -104,32 +104,32 @@ const projects = [
 const education = [
   {
     id: 1,
-    degree: { es: "Ingeniería en Sonido", en: "Sound Engineering Degree" },
-    institution: { es: "Universidad Nacional de Tres de Febrero", en: "National University of Tres de Febrero" },
-    years: "2015 - 2020",
+    degree: { es: "Ingeniería de Sonido", en: "Sound Engineering Degree" },
+    institution: { es: "Universidad Nacional de Tres de Febrero", en: "Universidad Nacional de Tres de Febrero" },
+    years: "2016 - 2025",
     description: {
-      es: "Formación integral en acústica, electrónica, procesamiento digital de señales y producción musical.",
-      en: "Comprehensive training in acoustics, electronics, digital signal processing and music production.",
+      es: "La Ingeniería de Sonido aborda el estudio del fenómeno sonoro y las ondas mecánicas, cubriendo desde su producción hasta su recepción. La formación incluye investigación y emprendedorismo, con enfoque en tres áreas: Ciencias de la Grabación, Electrónica de Audio, y Acústica y Electroacústica, abarcando técnicas de registro, diseño de equipamiento y tratamiento acústico.",
+      en: "Sound Engineering is concerned with the study of sound phenomena and mechanical waves, covering everything from their production to their reception. The programme includes research and entrepreneurship, focusing on three areas: Recording Sciences, Audio Electronics, and Acoustics and Electroacoustics, covering recording techniques, equipment design and acoustic treatment.",
     },
   },
   {
     id: 2,
-    degree: { es: "Técnico en Audio Profesional", en: "Professional Audio Technician" },
-    institution: { es: "Instituto de Audio y Acústica", en: "Institute of Audio and Acoustics" },
-    years: "2013 - 2015",
+    degree: { es: "Técnico de Grabación y Sonido", en: "Recording and Sound Technician" },
+    institution: { es: "Universidad Nacional de Tres de Febrero", en: "Universidad Nacional de Tres de Febrero" },
+    years: "2016 - 2022",
     description: {
-      es: "Especialización en grabación, mezcla y masterización en estudios profesionales.",
-      en: "Specialisation in recording, mixing and mastering in professional studios.",
+      es: "Técnico especializado en grabación y sonido, con capacidad para operar equipamiento en vivo, en estudios de grabación y masterización, y en emisoras de radio y TV. Habilidad en la calibración de sistemas de reamplificación y en el diseño, instalación y mantenimiento de sistemas electroacústicos para sonorización en diversos entornos.",
+      en: "Technician specialising in recording and sound, with the ability to operate equipment live, in recording and mastering studios, and in radio and television stations. Skilled in the calibration of reamplification systems and in the design, installation, and maintenance of electroacoustic sound systems in diverse environments.",
     },
   },
   {
     id: 3,
-    degree: { es: "Certificación en Diseño Acústico", en: "Acoustic Design Certification" },
-    institution: { es: "Asociación Argentina de Acústica", en: "Argentine Acoustics Association" },
-    years: "2021",
+    degree: { es: "Técnico Electricista con Orientación en Electrónica Industrial", en: "Electrical Technician with Orientation in Industrial Electronics" },
+    institution: { es: "Escuela Provincial de Enseñanza Técninca 11", en: "Escuela Provincial de Enseñanza Técninca 11" },
+    years: "2010 - 2015",
     description: {
-      es: "Certificación profesional en diseño y análisis acústico de espacios.",
-      en: "Professional certification in acoustic design and analysis of spaces.",
+      es: "Formación técnica en electricidad con especialización en electrónica industrial, abarcando instalación, mantenimiento y reparación de sistemas eléctricos, así como la comprensión y manejo de circuitos electrónicos industriales. Adquirí habilidades prácticas en el uso de herramientas y equipos, junto con un enfoque en la seguridad y eficiencia energética.",
+      en: "Technical training in electricity with a specialisation in industrial electronics, covering the installation, maintenance and repair of electrical systems, as well as the understanding and handling of industrial electronic circuits. I acquired practical skills in the use of tools and equipment, along with a focus on safety and energy efficiency.",
     },
   },
 ]
@@ -192,8 +192,8 @@ const contactInfo = [
   {
     icon: "location",
     title: { es: "Ubicación", en: "Location" },
-    value: "Buenos Aires, Argentina",
-    link: null,
+    value: "Zapala, Neuquén, Argentina",
+    link: "https://maps.app.goo.gl/JkNjtDGG794SzYT8A",
   },
 ]
 
