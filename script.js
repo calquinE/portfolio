@@ -6,17 +6,18 @@ let currentFilter = "all"
 
 // Data
 const skills = [
-  { name: "Python", icon: "🐍" },
-  { name: "MATLAB", icon: "📊" },
-  { name: "AutoCAD", icon: "📐" },
-  { name: "EASE", icon: "🔊" },
-  { name: "CadnaA", icon: "🎵" },
-  { name: "Office", icon: "📄" },
-  { name: "LaTeX", icon: "📝" },
-  { name: "ProTools", icon: "🎚️" },
-  { name: "Arta", icon: "📈" },
-  { name: "Smaart", icon: "🎛️" },
-  { name: "Audacity", icon: "🎧" },
+  { name: "Python", icon: "./img/skills/python.png" },
+  { name: "MATLAB", icon: "./img/skills/matlab.png" },
+  { name: "AutoCAD", icon: "./img/skills/autocad.png" },
+  { name: "EASE", icon: "./img/skills/ease.png" },
+  { name: "Smaart", icon: "./img/skills/smaart.png" }, 
+  { name: "CadnaA", icon: "./img/skills/cadnaa.svg" },
+  { name: "Office", icon: "./img/skills/office.png" },
+  { name: "LaTeX", icon: "./img/skills/latex.png" },
+  { name: "Multisim", icon: "./img/skills/multisim.webp" },
+  { name: "Altium", icon: "./img/skills/altium.png" },
+  { name: "ProTools", icon: "./img/skills/protools.png" },
+  { name: "Audacity", icon: "./img/skills/audacity.svg" },
 ]
 
 const projects = [
@@ -29,7 +30,7 @@ const projects = [
     },
     branch: { es: "Acústica", en: "Acoustics" },
     technologies: ["EASE", "Arta", "Smaart"],
-    image: "./public/concert-hall-acoustics.jpg",
+    image: "./img/proyectos/concert-hall-acoustics.jpg",
     link: "#",
     type: "pdf",
   },
@@ -42,7 +43,7 @@ const projects = [
     },
     branch: { es: "DSP", en: "DSP" },
     technologies: ["Python", "MATLAB"],
-    image: "./public/digital-signal-processing.jpg",
+    image: "./img/proyectos/digital-signal-processing.jpg",
     link: "#",
     type: "external",
   },
@@ -55,7 +56,7 @@ const projects = [
     },
     branch: { es: "Electroacústica", en: "Electroacoustics" },
     technologies: ["EASE", "AutoCAD"],
-    image: "./public/theatre-sound-system.jpg",
+    image: "./img/proyectos/theatre-sound-system.jpg",
     link: "#",
     type: "pdf",
   },
@@ -68,7 +69,7 @@ const projects = [
     },
     branch: { es: "Acústica", en: "Acoustics" },
     technologies: ["CadnaA", "AutoCAD"],
-    image: "./public/environmental-noise-mapping.jpg",
+    image: "./img/proyectos/environmental-noise-mapping.jpg",
     link: "#",
     type: "pdf",
   },
@@ -81,7 +82,7 @@ const projects = [
     },
     branch: { es: "DSP", en: "DSP" },
     technologies: ["Python", "MATLAB"],
-    image: "./public/audio-plugin-interface.jpg",
+    image: "./img/proyectos/audio-plugin-interface.jpg",
     link: "#",
     type: "external",
   },
@@ -94,7 +95,7 @@ const projects = [
     },
     branch: { es: "Audio", en: "Audio" },
     technologies: ["ProTools", "Audacity"],
-    image: "./public/recording-studio-session.png",
+    image: "./img/proyectos/recording-studio-session.png",
     link: "#",
     type: "external",
   },
@@ -327,7 +328,7 @@ function createSkillCard(skill) {
   const card = document.createElement("div")
   card.className = "skill-card"
   card.innerHTML = `
-    <div class="skill-icon">${skill.icon}</div>
+    <div class="skill-icon"><img src="${skill.icon}" alt="${skill.name} icon" /></div>
     <div class="skill-name">${skill.name}</div>
   `
   return card
