@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calquin Epullan - Portfolio</title>
+    <meta name="description" content="Professional Sound Engineer specializing in recording, acoustics, and digital signal processing">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navigation" class="nav">
+        <div class="container nav-container">
+            <button class="nav-logo" onclick="scrollToSection('hero')">Calquin Epullan</button>
+            
+            <div class="nav-links">
+                <button onclick="scrollToSection('hero')" data-es="Inicio" data-en="Home">Inicio</button>
+                <button onclick="scrollToSection('about')" data-es="Sobre mí" data-en="About">Sobre mí</button>
+                <button onclick="scrollToSection('skills')" data-es="Habilidades" data-en="Skills">Habilidades</button>
+                <button onclick="scrollToSection('projects')" data-es="Proyectos" data-en="Projects">Proyectos</button>
+                <button onclick="scrollToSection('education')" data-es="Formación" data-en="Education">Formación</button>
+                <button onclick="scrollToSection('experience')" data-es="Experiencia" data-en="Experience">Experiencia</button>
+                <button onclick="scrollToSection('contact')" data-es="Contacto" data-en="Contact">Contacto</button>
+            </div>
+
+            <div class="nav-actions">
+                <button class="icon-btn" id="theme-toggle" aria-label="Toggle theme">
+                    <svg class="icon moon-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg class="icon sun-icon hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+
+                <div class="dropdown">
+                    <button class="icon-btn" id="language-toggle" aria-label="Change language">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <line x1="2" y1="12" x2="22" y2="12"></line>
+                            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                        </svg>
+                    </button>
+                    <div class="dropdown-menu" id="language-menu">
+                        <button onclick="setLanguage('es')">Español</button>
+                        <button onclick="setLanguage('en')">English</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="hero-background">
+            <div class="gradient-bg"></div>
+            
+            <svg class="waves" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                    <linearGradient id="waveGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                        <stop offset="0%" stop-color="currentColor" stop-opacity="0.1" />
+                        <stop offset="50%" stop-color="currentColor" stop-opacity="0.3" />
+                        <stop offset="100%" stop-color="currentColor" stop-opacity="0.1" />
+                    </linearGradient>
+                </defs>
+                <path d="M0,300 Q250,200 500,300 T1000,300 T1500,300 T2000,300" fill="none" stroke="url(#waveGradient)" stroke-width="2" class="wave wave-1" />
+                <path d="M0,350 Q250,250 500,350 T1000,350 T1500,350 T2000,350" fill="none" stroke="url(#waveGradient)" stroke-width="2" class="wave wave-2" />
+                <path d="M0,400 Q250,300 500,400 T1000,400 T1500,400 T2000,400" fill="none" stroke="url(#waveGradient)" stroke-width="2" class="wave wave-3" />
+            </svg>
+
+            <div class="particles" id="particles"></div>
+        </div>
+
+        <div class="container hero-content">
+            <p class="hero-greeting" data-es="Hola, soy" data-en="Hello, I'm">Hola, soy</p>
+            <h1 class="hero-name">Calquin Epullan</h1>
+            <h2 class="hero-title" data-es="Ingeniero de Sonido" data-en="Sound Engineer">Ingeniero de Sonido</h2>
+            <p class="hero-subtitle" data-es="Especializado en grabación, electrónica, acústica y procesamiento digital de señales" data-en="Specialising in recording, electronics, acoustics and digital signal processing">
+                Especializado en grabación, electrónica, acústica y procesamiento digital de señales
+            </p>
+        </div>
+
+        <button class="scroll-down" onclick="scrollToSection('about')" aria-label="Scroll down">
+            <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+        </button>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title" data-es="Sobre mí" data-en="About Me">Sobre mí</h2>
+            <div class="about-content">
+                <div class="about-photo">
+                    <div class="photo-glow"></div>
+                    <div class="photo-wrapper">
+                        <img src="./public/calquin-epullan-protrait.jpg" alt="Calquin Epullan - Sound Engineer">
+                    </div>
+                </div>
+                <div class="about-text">
+                    <p data-es="Ingeniero de Sonido con amplia experiencia en grabación, mezcla y masterización. Mi formación abarca desde la electrónica y acústica hasta el procesamiento digital de señales, permitiéndome abordar proyectos desde una perspectiva técnica y artística integral. Me apasiona crear experiencias sonoras inmersivas y trabajar en la intersección entre la tecnología y el arte." 
+                       data-en="Sound Engineer with extensive experience in recording, mixing and mastering. My background ranges from electronics and acoustics to digital signal processing, allowing me to approach projects from a comprehensive technical and artistic perspective. I am passionate about creating immersive sound experiences and working at the intersection of technology and art.">
+                        Ingeniero de Sonido con amplia experiencia en grabación, mezcla y masterización. Mi formación abarca desde la electrónica y acústica hasta el procesamiento digital de señales, permitiéndome abordar proyectos desde una perspectiva técnica y artística integral. Me apasiona crear experiencias sonoras inmersivas y trabajar en la intersección entre la tecnología y el arte.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title" data-es="Habilidades" data-en="Skills">Habilidades</h2>
+            
+            <!-- Desktop: Infinite carousel -->
+            <div class="skills-carousel desktop-only">
+                <div class="skills-track" id="skills-track">
+                    <!-- Skills will be duplicated by JS -->
+                </div>
+            </div>
+
+            <!-- Mobile: Static carousel with buttons -->
+            <div class="skills-mobile mobile-only">
+                <button class="carousel-btn prev" id="skills-prev" aria-label="Previous">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                </button>
+                <div class="skills-container" id="skills-mobile-container"></div>
+                <button class="carousel-btn next" id="skills-next" aria-label="Next">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+        <div class="container">
+            <h2 class="section-title" data-es="Proyectos" data-en="Projects">Proyectos</h2>
+            
+            <div class="filters">
+                <button class="filter-btn active" data-branch="all" data-es="Todos" data-en="All">Todos</button>
+                <button class="filter-btn" data-branch="Acústica" data-es="Acústica" data-en="Acoustics">Acústica</button>
+                <button class="filter-btn" data-branch="DSP" data-es="DSP" data-en="DSP">DSP</button>
+                <button class="filter-btn" data-branch="Electroacústica" data-es="Electroacústica" data-en="Electroacoustics">Electroacústica</button>
+                <button class="filter-btn" data-branch="Audio" data-es="Audio" data-en="Audio">Audio</button>
+            </div>
+
+            <div class="projects-grid" id="projects-grid"></div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title" data-es="Formación Académica" data-en="Education">Formación Académica</h2>
+            
+            <div class="timeline">
+                <div class="timeline-line"></div>
+                <div id="education-timeline"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+        <div class="container">
+            <h2 class="section-title" data-es="Experiencia" data-en="Experience">Experiencia</h2>
+            
+            <div class="experience-list" id="experience-list"></div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title" data-es="Contacto" data-en="Contact">Contacto</h2>
+            
+            <div class="contact-grid" id="contact-grid"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p class="footer-text" data-es="© 2025 Calquin Epullan. Todos los derechos reservados." data-en="© 2025 Calquin Epullan. All rights reserved.">
+                © 2025 Calquin Epullan. Todos los derechos reservados.
+            </p>
+            <button class="btn btn-outline" onclick="scrollToTop()">
+                <span data-es="Volver arriba" data-en="Back to top">Volver arriba</span>
+                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="12" y1="19" x2="12" y2="5"></line>
+                    <polyline points="5 12 12 5 19 12"></polyline>
+                </svg>
+            </button>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
