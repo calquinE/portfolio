@@ -80,7 +80,7 @@ const projects = [
       es: "Desarrollo de un plugin VST de reverberación algorítmica con interfaz gráfica personalizada.",
       en: "Development of an algorithmic reverb VST plugin with custom graphical interface.",
     },
-    branch: { es: "DSP", en: "DSP" },
+    branch: { es: "Psicoacústica", en: "Psychoacoustics" },
     technologies: ["Python", "MATLAB"],
     image: "./img/proyectos/audio-plugin-interface.jpg",
     link: "#",
@@ -157,17 +157,6 @@ const experience = [
       en: "I collaborated in the execution of electricity distribution projects, from the installation of new lines to the extension of existing ones. I assisted in the maintenance of these networks, guaranteeing the correct supply in residential and commercial areas. I also participated in the identification and solution of technical failures.",
     },
   },
-  // {
-  //   id: 3,
-  //   position: { es: "Técnico de Audio", en: "Audio Technician" },
-  //   company: { es: "Cooperativa de Energía Eléctrica de Zapala (CEEZ)", en: "Cooperativa de Energía Eléctrica de Zapala (CEEZ)" },
-  //   location: { es: "Zapala, Neuquén, Argentina", en: "Zapala, Neuquén, Argentina" },
-  //   period: { es: "Jun 2017 - Feb 2019", en: "Jun 2017 - Feb 2019" },
-  //   description: {
-  //     es: "Operación de sistemas de sonido en eventos en vivo. Montaje y configuración de equipos de audio profesional para conciertos y eventos corporativos.",
-  //     en: "Operation of sound systems at live events. Assembly and configuration of professional audio equipment for concerts and corporate events.",
-  //   },
-  // },
 ]
 
 const contactInfo = [
@@ -300,50 +289,132 @@ function initParticles() {
 }
 
 // Skills
+let autoScrollInterval; // Controla el auto-scroll (ahora requestAnimationFrame)
+let isPaused = false; // Para pausa en hover o drag
+let currentTranslate = 0; // Posición actual (global)
+let isDragging = false; // Para saber si estamos arrastrando
+let startX = 0; // Posición inicial del mouse/touch
+
 function initSkills() {
-  // Desktop: Infinite carousel
-  const skillsTrack = document.getElementById("skills-track")
-  const doubledSkills = [...skills, ...skills]
-  doubledSkills.forEach((skill) => {
-    const card = createSkillCard(skill)
-    skillsTrack.appendChild(card)
-  })
+    const skillsTrack = document.getElementById("skills-track");
+    const carousel = document.getElementById("skills-carousel");
 
-  // Mobile: Static carousel
-  const skillsMobileContainer = document.getElementById("skills-mobile-container")
-  renderMobileSkills()
+    if (!skillsTrack || !carousel) {
+        console.error("Elementos del carrusel no encontrados");
+        return;
+    }
 
-  document.getElementById("skills-prev").addEventListener("click", () => {
-    currentSkillIndex = (currentSkillIndex - 1 + skills.length) % skills.length
-    renderMobileSkills()
-  })
+    // Duplica los skills para infinito
+    const doubledSkills = [...skills, ...skills];
+    doubledSkills.forEach((skill) => {
+        const card = createSkillCard(skill);
+        skillsTrack.appendChild(card);
+    });
 
-  document.getElementById("skills-next").addEventListener("click", () => {
-    currentSkillIndex = (currentSkillIndex + 1) % skills.length
-    renderMobileSkills()
-  })
+    // Inicia auto-scroll suave
+    startAutoScroll();
+
+    // Pausa en hover (desktop)
+    if (window.innerWidth >= 768) {
+        carousel.addEventListener("mouseenter", () => {
+            isPaused = true;
+            carousel.style.cursor = "grab"
+        });
+        carousel.addEventListener("mouseleave", () => {
+            isPaused = false;
+        });
+    }
+
+    // Eventos para drag (desktop) y swipe (mobile)
+    // Mouse events para desktop
+    carousel.addEventListener("mousedown", (e) => {
+        if (window.innerWidth >= 768) { // Solo desktop
+            isDragging = true;
+            isPaused = true;
+            startX = e.clientX;
+            carousel.style.cursor = "grabbing";
+        }
+    });
+
+    document.addEventListener("mousemove", (e) => {
+        if (isDragging && window.innerWidth >= 768) {
+            const deltaX = e.clientX - startX;
+            currentTranslate += deltaX; // Mueve según el delta
+            startX = e.clientX; // Actualiza startX para movimiento continuo
+            // Limita para infinito: resetea si sale de rango
+            if (currentTranslate > 0) {
+                currentTranslate = -skillsTrack.scrollWidth / 2;
+            } else if (Math.abs(currentTranslate) >= skillsTrack.scrollWidth / 2) {
+                currentTranslate = 0;
+            }
+            skillsTrack.style.transform = `translateX(${currentTranslate}px)`;
+        }
+    });
+
+    document.addEventListener("mouseup", () => {
+        if (isDragging) {
+            isDragging = false;
+            isPaused = false;
+            carousel.style.cursor = "grab";
+        }
+    });
+
+    // Touch events para mobile (swipe/drag)
+    carousel.addEventListener("touchstart", (e) => {
+        isDragging = true;
+        isPaused = true;
+        startX = e.touches[0].clientX;
+    });
+
+    carousel.addEventListener("touchmove", (e) => {
+        if (isDragging) {
+            const deltaX = e.touches[0].clientX - startX;
+            currentTranslate += deltaX;
+            startX = e.touches[0].clientX;
+            // Limita para infinito
+            if (currentTranslate > 0) {
+                currentTranslate = -skillsTrack.scrollWidth / 2;
+            } else if (Math.abs(currentTranslate) >= skillsTrack.scrollWidth / 2) {
+                currentTranslate = 0;
+            }
+            skillsTrack.style.transform = `translateX(${currentTranslate}px)`;
+        }
+    });
+
+    carousel.addEventListener("touchend", () => {
+        isDragging = false;
+        isPaused = false;
+    });
 }
 
 function createSkillCard(skill) {
-  const card = document.createElement("div")
-  card.className = "skill-card"
-  card.innerHTML = `
-    <div class="skill-icon"><img src="${skill.icon}" alt="${skill.name} icon" /></div>
-    <div class="skill-name">${skill.name}</div>
-  `
-  return card
+    const card = document.createElement("div");
+    card.className = "skill-card";
+    card.innerHTML = `
+        <div class="skill-icon"><img src="${skill.icon}" alt="${skill.name} icon" /></div>
+        <div class="skill-name">${skill.name}</div>
+    `;
+    return card;
 }
 
-function renderMobileSkills() {
-  const container = document.getElementById("skills-mobile-container")
-  container.innerHTML = ""
-  const visibleSkills = 3
-  for (let i = 0; i < visibleSkills; i++) {
-    const index = (currentSkillIndex + i) % skills.length
-    const card = createSkillCard(skills[index])
-    container.appendChild(card)
-  }
+function startAutoScroll() {
+    const skillsTrack = document.getElementById("skills-track");
+
+    function animate() {
+        if (!isPaused && !isDragging) {
+            currentTranslate -= 0.4; // Velocidad
+            if (Math.abs(currentTranslate) >= skillsTrack.scrollWidth / 2) {
+                currentTranslate = 0; // Resetea para infinito
+            }
+            skillsTrack.style.transform = `translateX(${currentTranslate}px)`;
+        }
+        autoScrollInterval = requestAnimationFrame(animate); // Llama al siguiente frame
+    }
+    animate(); // Inicia la animación
 }
+
+// Llama a initSkills cuando el DOM esté listo
+document.addEventListener("DOMContentLoaded", initSkills);
 
 // Projects
 function initProjects() {

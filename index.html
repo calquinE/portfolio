@@ -122,27 +122,13 @@
         <div class="container">
             <h2 class="section-title" data-es="Habilidades" data-en="Skills">Habilidades</h2>
             
-            <!-- Desktop: Infinite carousel -->
-            <div class="skills-carousel desktop-only">
+            <!-- Infinite carousel -->
+            <div class="skills-carousel" id="skills-carousel">
                 <div class="skills-track" id="skills-track">
                     <!-- Skills will be duplicated by JS -->
                 </div>
             </div>
-
-            <!-- Mobile: Static carousel with buttons -->
-            <div class="skills-mobile mobile-only">
-                <button class="carousel-btn prev" id="skills-prev" aria-label="Previous">
-                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polyline points="15 18 9 12 15 6"></polyline>
-                    </svg>
-                </button>
-                <div class="skills-container" id="skills-mobile-container"></div>
-                <button class="carousel-btn next" id="skills-next" aria-label="Next">
-                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polyline points="9 18 15 12 9 6"></polyline>
-                    </svg>
-                </button>
-            </div>
+            
         </div>
     </section>
 
@@ -157,6 +143,7 @@
                 <button class="filter-btn" data-branch="DSP" data-es="DSP" data-en="DSP">DSP</button>
                 <button class="filter-btn" data-branch="Electroacústica" data-es="Electroacústica" data-en="Electroacoustics">Electroacústica</button>
                 <button class="filter-btn" data-branch="Audio" data-es="Audio" data-en="Audio">Audio</button>
+                <button class="filter-btn" data-branch="Psicoacústica" data-es="Psicoacústica" data-en="Psychoacoustics">Psicoacústica</button>
             </div>
 
             <div class="projects-grid" id="projects-grid"></div>
@@ -196,8 +183,8 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="container footer-content">
-            <p class="footer-text" data-es="© 2025 Calquin Epullan. Todos los derechos reservados." data-en="© 2025 Calquin Epullan. All rights reserved.">
-                © 2025 Calquin Epullan. Todos los derechos reservados.
+            <p class="footer-text" data-es="© 2025 Creado y diseñado por Calquin Epullan. Todos los derechos reservados." data-en="© 2025 Created and designed by Calquin Epullan. All rights reserved.">
+                © 2025 Creado y diseñado por Calquin Epullan. Todos los derechos reservados.
             </p>
             <button class="btn btn-outline" onclick="scrollToTop()">
                 <span data-es="Volver arriba" data-en="Back to top">Volver arriba</span>
