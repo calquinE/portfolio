@@ -137,37 +137,37 @@ const education = [
 const experience = [
   {
     id: 1,
-    position: { es: "Ingeniero de Sonido Senior", en: "Senior Sound Engineer" },
-    company: { es: "Estudio Sonoro", en: "Sonoro Studio" },
-    location: { es: "Buenos Aires, Argentina", en: "Buenos Aires, Argentina" },
-    period: { es: "Ene 2021 - Presente", en: "Jan 2021 - Present" },
+    position: { es: "Práctica Profesional", en: "Senior Sound Engineer" },
+    company: { es: "Instituto Superior de Otorrinolaringología (ISO)", en: "Instituto Superior de Otorrinolaringología (ISO)" },
+    location: { es: "Ciudad Autónoma de Buenos Aires, Argentina", en: "Ciudad Autónoma de Buenos Aires, Argentina" },
+    period: { es: "Sep 2024 - Nov 2024", en: "Sep 2024 - Nov 2024" },
     description: {
-      es: "Responsable de la grabación, mezcla y masterización de proyectos musicales. Supervisión de sesiones de grabación y coordinación con artistas y productores.",
-      en: "Responsible for recording, mixing and mastering music projects. Supervision of recording sessions and coordination with artists and producers.",
+      es: "Participé activamente en la calibración acústica de sistemas de reproducción y optimización de software para pruebas de localización sonora en pacientes con implantes cocleares y normoyentes. También adquirí experiencia realizando pruebas auditivas y experimentos en entornos controlados, garantizando el cumplimiento de los protocolos éticos y de seguridad, lo que me permitió profundizar en el manejo de equipos especializados y en el análisis de datos de medición.",
+      en: "I actively participated in the acoustic calibration of reproduction systems and software optimisation for sound localisation tests in patients with cochlear implants and normotensive patients. I also gained experience performing hearing tests and experiments in controlled environments, ensuring compliance with ethical and safety protocols, which allowed me to deepen my knowledge in the handling of specialised equipment and in the analysis of measurement data.",
     },
   },
   {
     id: 2,
-    position: { es: "Consultor en Acústica", en: "Acoustics Consultant" },
-    company: { es: "Acústica Integral", en: "Integral Acoustics" },
-    location: { es: "Buenos Aires, Argentina", en: "Buenos Aires, Argentina" },
-    period: { es: "Mar 2019 - Dic 2020", en: "Mar 2019 - Dec 2020" },
+    position: { es: "Pasantía", en: "Trainee" },
+    company: { es: "Cooperativa de Energía Eléctrica de Zapala (CEEZ)", en: "Cooperativa de Energía Eléctrica de Zapala (CEEZ)" },
+    location: { es: "Zapala, Neuquén, Argentina", en: "Zapala, Neuquén, Argentina" },
+    period: { es: "Mar 2015 - Nov 2015", en: "Mar 2015 - Nov 2015" },
     description: {
-      es: "Diseño acústico de salas de conciertos, teatros y estudios de grabación. Realización de estudios de impacto acústico y mediciones in situ.",
-      en: "Acoustic design of concert halls, theatres and recording studios. Acoustic impact studies and on-site measurements.",
+      es: "Colaboré en la ejecución de proyectos de distribución eléctrica, desde la instalación de nuevas líneas hasta la ampliación de aquellas existentes. Asistí en el mantenimiento de estas redes, garantizando el correcto suministro en áreas residenciales y comerciales. También participé en la identificación y solución de fallas técnicas, así como en la supervisión de trabajos en campo.",
+      en: "I collaborated in the execution of electricity distribution projects, from the installation of new lines to the extension of existing ones. I assisted in the maintenance of these networks, guaranteeing the correct supply in residential and commercial areas. I also participated in the identification and solution of technical failures.",
     },
   },
-  {
-    id: 3,
-    position: { es: "Técnico de Audio", en: "Audio Technician" },
-    company: { es: "Producciones Live", en: "Live Productions" },
-    location: { es: "Buenos Aires, Argentina", en: "Buenos Aires, Argentina" },
-    period: { es: "Jun 2017 - Feb 2019", en: "Jun 2017 - Feb 2019" },
-    description: {
-      es: "Operación de sistemas de sonido en eventos en vivo. Montaje y configuración de equipos de audio profesional para conciertos y eventos corporativos.",
-      en: "Operation of sound systems at live events. Assembly and configuration of professional audio equipment for concerts and corporate events.",
-    },
-  },
+  // {
+  //   id: 3,
+  //   position: { es: "Técnico de Audio", en: "Audio Technician" },
+  //   company: { es: "Cooperativa de Energía Eléctrica de Zapala (CEEZ)", en: "Cooperativa de Energía Eléctrica de Zapala (CEEZ)" },
+  //   location: { es: "Zapala, Neuquén, Argentina", en: "Zapala, Neuquén, Argentina" },
+  //   period: { es: "Jun 2017 - Feb 2019", en: "Jun 2017 - Feb 2019" },
+  //   description: {
+  //     es: "Operación de sistemas de sonido en eventos en vivo. Montaje y configuración de equipos de audio profesional para conciertos y eventos corporativos.",
+  //     en: "Operation of sound systems at live events. Assembly and configuration of professional audio equipment for concerts and corporate events.",
+  //   },
+  // },
 ]
 
 const contactInfo = [
