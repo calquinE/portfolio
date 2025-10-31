@@ -237,21 +237,55 @@ function scrollToTop() {
 
 // Theme
 function initTheme() {
-  const themeToggle = document.getElementById("theme-toggle")
-  const moonIcon = themeToggle.querySelector(".moon-icon")
-  const sunIcon = themeToggle.querySelector(".sun-icon")
+  const themeToggle = document.getElementById("theme-toggle");
+  const moonIcon = themeToggle.querySelector(".moon-icon");
+  const sunIcon = themeToggle.querySelector(".sun-icon");
 
+  // Función para aplicar el tema
+  function applyTheme(theme) {
+    currentTheme = theme;
+    document.documentElement.classList.toggle("dark", theme === "dark");
+    moonIcon.classList.toggle("hidden", theme === "dark");
+    sunIcon.classList.toggle("hidden", theme === "light");
+  }
+
+  // Al cargar: verifica localStorage primero, luego sistema
+  const savedTheme = localStorage.getItem("theme");
+  if (savedTheme) {
+    applyTheme(savedTheme); // Usa lo guardado
+  } else {
+    // Si no hay guardado, usa la preferencia del sistema
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    applyTheme(prefersDark ? "dark" : "light");
+  }
+
+  // Escucha cambios en el sistema
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+    if (!localStorage.getItem("theme")) { // Solo actualiza si no hay guardado
+      applyTheme(e.matches ? "dark" : "light");
+    }
+      });
+
+  // Toggle manual: guarda en localStorage
   themeToggle.addEventListener("click", () => {
-    currentTheme = currentTheme === "light" ? "dark" : "light"
-    document.documentElement.classList.toggle("dark", currentTheme === "dark")
-    moonIcon.classList.toggle("hidden", currentTheme === "dark")
-    sunIcon.classList.toggle("hidden", currentTheme === "light")
-  })
+    const newTheme = currentTheme === "light" ? "dark" : "light";
+    applyTheme(newTheme);
+    localStorage.setItem("theme", newTheme); // Guarda la elección
+  });
 }
 
 // Language
 function initLanguage() {
-  updateLanguage()
+  // Al cargar: verifica localStorage primero, luego navegador
+  const savedLang = localStorage.getItem("language");
+  if (savedLang) {
+    currentLanguage = savedLang; // Usa lo guardado
+  } else {
+    // Si no hay guardado, detecta el idioma del navegador
+    const browserLang = navigator.language || navigator.languages[0];
+    currentLanguage = browserLang.startsWith("es") ? "es" : "en"; // Asume español o inglés
+  }
+  updateLanguage();
 }
 
 function setLanguage(lang) {
@@ -259,10 +293,11 @@ function setLanguage(lang) {
   document.documentElement.lang = lang
   updateLanguage()
   document.getElementById("language-menu").classList.remove("show")
+  localStorage.setItem("language", lang); // Guarda la elección manual
 }
 
 function updateLanguage() {
-  // Update all elements with data-es and data-en attributes
+  // Actualiza todos los elementos con los atributos data-es y data-en
   document.querySelectorAll("[data-es][data-en]").forEach((el) => {
     el.textContent = el.getAttribute(`data-${currentLanguage}`)
   })
