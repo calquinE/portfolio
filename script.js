@@ -23,87 +23,135 @@ const skills = [
 const projects = [
   {
     id: 1,
-    title: { es: "Análisis Acústico de Sala de Conciertos", en: "Concert Hall Acoustic Analysis" },
+    title: { es: "Ruido del freehub de bicicleta", en: "Bicycle Freehub Noise" },
     description: {
-      es: "Estudio completo de las características acústicas de una sala de conciertos, incluyendo mediciones de tiempo de reverberación y respuesta en frecuencia.",
-      en: "Comprehensive study of the acoustic characteristics of a concert hall, including reverberation time measurements and frequency response.",
+      es: "Proyecto de tesis de grado centrado en el estudio psicoacústico del ruido del freehub, combinando análisis físico, perceptivo y estadístico en distintos contextos de escucha.",
+      en: "Undergraduate thesis project focused on the psychoacoustic study of bicycle freehub noise, combining physical, perceptual, and statistical analysis across different listening contexts.",
     },
-    branch: { es: "Acústica", en: "Acoustics" },
-    technologies: ["EASE", "Arta", "Smaart"],
-    image: "./img/proyectos/concert-hall-acoustics.jpg",
-    link: "#",
-    type: "pdf",
+    branch: { es: "Psicoacústica", en: "Psychoacoustics" },
+    technologies: ["Python", "Audacity"],
+    image: "./img/proyectos/cassette.jpg",
+    link: "https://biblio.untref.edu.ar/bib/77961",
+    type: "external",
+    buttonText: { es: "Ver proyecto", en: "View project" },
   },
   {
     id: 2,
-    title: { es: "Procesador de Efectos Digital", en: "Digital Effects Processor" },
+    title: { es: "Generador Pulsado", en: "Pulsed Generator" },
     description: {
-      es: "Desarrollo de un procesador de efectos de audio en tiempo real utilizando algoritmos de DSP avanzados.",
-      en: "Development of a real-time audio effects processor using advanced DSP algorithms.",
+      es: "Modificaciones a un generador pulsado cuya frecuencia de onda senoidal como de tren de pulsos puede ser ajustada por el usuario.",
+      en: "Modifications to a pulsed generator whose sine wave and pulse train frequencies can be adjusted by the user.",
     },
-    branch: { es: "DSP", en: "DSP" },
-    technologies: ["Python", "MATLAB"],
-    image: "./img/proyectos/digital-signal-processing.jpg",
-    link: "#",
-    type: "external",
+    branch: { es: "Electrónica", en: "Electronics" },
+    technologies: ["Multisim"],
+    image: "./img/proyectos/generador_puls.jpg",
+    link: "./pdf/generador_puls.pdf",
+    type: "pdf",
+    buttonText: { es: "Ver PDF", en: "View PDF" },
   },
   {
     id: 3,
-    title: { es: "Sistema de Sonido para Teatro", en: "Theatre Sound System" },
+    title: { es: "Soka Gakkai", en: "Soka Gakkai" },
     description: {
-      es: "Diseño e implementación de un sistema de refuerzo sonoro para un teatro de 500 butacas.",
-      en: "Design and implementation of a sound reinforcement system for a 500-seat theatre.",
+      es: "Mediciones acústicas, tanto en el área de audiencia como del escenario, del Auditorio de la Paz del Soka Gakkai de Argentina.",
+      en: "Acoustic measurements carried out in both the audience area and the stage of the Soka Gakkai Auditorio de la Paz in Argentina.",
     },
-    branch: { es: "Electroacústica", en: "Electroacoustics" },
-    technologies: ["EASE", "AutoCAD"],
-    image: "./img/proyectos/theatre-sound-system.jpg",
-    link: "#",
+    branch: { es: "Acústica", en: "Acoustics" },
+    technologies: ["Protools", "Smaart"],
+    image: "./img/proyectos/soka.jpg",
+    link: "./pdf/soka.pdf",
     type: "pdf",
+    buttonText: { es: "Ver PDF", en: "View PDF" },
   },
   {
     id: 4,
-    title: { es: "Análisis de Ruido Ambiental", en: "Environmental Noise Analysis" },
+    title: { es: "Medición de sistema electroacústico", en: "Electroacoustic System Measurement"},
     description: {
-      es: "Estudio de impacto acústico y mapeo de ruido para un proyecto de desarrollo urbano.",
-      en: "Acoustic impact study and noise mapping for an urban development project.",
+      es: "Medición y análisis eléctrico y acústico de un sistema electroacústico. Se realizaron pruebas de impedancia, parámetros Thiele-Small, respuesta al impulso y simulaciones comparativas con resultados experimentales.",
+      en: "Electrical and acoustic measurement and analysis of an electroacoustic system. Impedance tests, Thiele–Small parameters, impulse response, and comparative simulations with experimental results were conducted.",
     },
-    branch: { es: "Acústica", en: "Acoustics" },
-    technologies: ["CadnaA", "AutoCAD"],
-    image: "./img/proyectos/environmental-noise-mapping.jpg",
-    link: "#",
+    branch: { es: "Electroacústica", en: "Electroacoustics" },
+    technologies: ["Arta", "Smaart"],
+    image: "./img/proyectos/sist_electro.jpg",
+    link: "./pdf/sist_electro.pdf",
     type: "pdf",
+    buttonText: { es: "Ver PDF", en: "View PDF" },
   },
   {
     id: 5,
-    title: { es: "Plugin de Reverberación", en: "Reverb Plugin" },
+    title: { es: "Manfred", en: "Manfred" },
     description: {
-      es: "Desarrollo de un plugin VST de reverberación algorítmica con interfaz gráfica personalizada.",
-      en: "Development of an algorithmic reverb VST plugin with custom graphical interface.",
+      es: "Grabación y edición de foley para corto animado Manfred (se recomienda escuchar con auriculares).",
+      en: "Foley recording and editing for the animated short film Manfred (headphones recommended for listening).",
     },
-    branch: { es: "Psicoacústica", en: "Psychoacoustics" },
-    technologies: ["Python", "MATLAB"],
-    image: "./img/proyectos/audio-plugin-interface.jpg",
-    link: "#",
+    branch: { es: "Audio", en: "Audio" },
+    technologies: ["Protools"],
+    image: "./img/proyectos/manfred.jpg",
+    link: "https://youtu.be/lHKzQQo8d7Y",
     type: "external",
+    buttonText: { es: "Ver proyecto", en: "View project" },
   },
   {
     id: 6,
-    title: { es: "Grabación de Álbum Musical", en: "Music Album Recording" },
+    title: { es: "Medición de Directividad", en: "Directivity Measurement" },
     description: {
-      es: "Grabación, mezcla y masterización de un álbum de música independiente en estudio profesional.",
-      en: "Recording, mixing and mastering of an independent music album in a professional studio.",
+      es: "Análisis sobre la directividad de un sistema formado por un driver de compresión y una bocina.",
+      en: "Analysis of the directivity of a system composed of a compression driver and a horn.",
     },
-    branch: { es: "Audio", en: "Audio" },
-    technologies: ["ProTools", "Audacity"],
-    image: "./img/proyectos/recording-studio-session.png",
-    link: "#",
-    type: "external",
+    branch: { es: "Electroacústica", en: "Electroacoustics" },
+    technologies: ["Arta", "Python"],
+    image: "./img/proyectos/directividad.jpg",
+    link: "./pdf/directividad.pdf",
+    type: "pdf",
+    buttonText: { es: "Ver PDF", en: "View PDF" },
+  },
+  {
+    id: 7,
+    title: { es: "Procesador de RIRs", en: "RIR Processor" },
+    description: {
+      es: "Desarrollo, en Python, de un programa para el cálculo de parámetros acústicos de salas a partir de respuestas al impulso.",
+      en: "Development, in Python, of a program for calculating room acoustic parameters from impulse responses.",
+    },
+    branch: { es: "DSP", en: "DSP" },
+    technologies: ["Python"],
+    image: "./img/proyectos/rirs.jpg",
+    link: "./pdf/rirs.pdf",
+    type: "pdf",
+    buttonText: { es: "Ver PDF", en: "View PDF" },
+  },
+  {
+    id: 8,
+    title: { es: "Auditorio Niccolò Paganini", en: "Niccolò Paganini Auditorium" },
+    description: {
+      es: "Modelado geométrico y acústico del auditorio Niccolo Paganini en Parma, Italia, utilizando el software EASE.",
+      en: "Geometric and acoustic modelling of the Niccolò Paganini Auditorium in Parma, Italy, using EASE software.",
+    },
+    branch: { es: "Acústica", en: "Acoustics" },
+    technologies: ["EASE"],
+    image: "./img/proyectos/niccolo.jpg",
+    link: "./pdf/niccolo.pdf",
+    type: "pdf",
+    buttonText: { es: "Ver PDF", en: "View PDF" },
+  },
+  {
+    id: 9,
+    title: { es: "Mapa de Ruido", en: "Noise Map" },
+    description: {
+      es: "Confección de un mapa de ruido en CadnaA de zona comercial de la ciudad de Caseros, Buenos Aires. Además, se hicieron mediciones para la validación del mismo.",
+      en: "Creation of a noise map in CadnaA of a commercial area in Caseros, Buenos Aires. Field measurements were also carried out for validation.",
+    },
+    branch: { es: "Acústica", en: "Acoustics" },
+    technologies: ["CadnaA"],
+    image: "./img/proyectos/mapa.jpg",
+    link: "./pdf/mapa_ruido.pdf",
+    type: "pdf",
+    buttonText: { es: "Ver PDF", en: "View PDF" },
   },
 ]
 
 const education = [
   {
-    id: 1,
+    id: 3,
     degree: { es: "Ingeniería de Sonido", en: "Sound Engineering Degree" },
     institution: { es: "Universidad Nacional de Tres de Febrero", en: "Universidad Nacional de Tres de Febrero" },
     years: "2016 - 2025",
@@ -123,7 +171,7 @@ const education = [
     },
   },
   {
-    id: 3,
+    id: 1,
     degree: { es: "Técnico Electricista con Orientación en Electrónica Industrial", en: "Electrical Technician with Orientation in Industrial Electronics" },
     institution: { es: "Escuela Provincial de Enseñanza Técninca 11", en: "Escuela Provincial de Enseñanza Técninca 11" },
     years: "2010 - 2015",
@@ -136,7 +184,7 @@ const education = [
 
 const experience = [
   {
-    id: 1,
+    id: 2,
     position: { es: "Práctica Profesional", en: "Senior Sound Engineer" },
     company: { es: "Instituto Superior de Otorrinolaringología (ISO)", en: "Instituto Superior de Otorrinolaringología (ISO)" },
     location: { es: "Ciudad Autónoma de Buenos Aires, Argentina", en: "Ciudad Autónoma de Buenos Aires, Argentina" },
@@ -147,7 +195,7 @@ const experience = [
     },
   },
   {
-    id: 2,
+    id: 1,
     position: { es: "Pasantía", en: "Trainee" },
     company: { es: "Cooperativa de Energía Eléctrica de Zapala (CEEZ)", en: "Cooperativa de Energía Eléctrica de Zapala (CEEZ)" },
     location: { es: "Zapala, Neuquén, Argentina", en: "Zapala, Neuquén, Argentina" },
@@ -301,6 +349,11 @@ function updateLanguage() {
   document.querySelectorAll("[data-es][data-en]").forEach((el) => {
     el.textContent = el.getAttribute(`data-${currentLanguage}`)
   })
+
+  // Resetea el filtro a "Todos" cuando cambia el idioma
+  document.querySelectorAll(".filter-btn").forEach((btn) => btn.classList.remove("active"));
+  document.querySelector(".filter-btn[data-es='Todos']").classList.add("active"); // Asume que "Todos" es el botón "All"
+  currentFilter = document.querySelector(".filter-btn.active").getAttribute(`data-${currentLanguage}`);
 
   // Re-render dynamic content
   renderProjects()
@@ -458,26 +511,26 @@ function initProjects() {
     btn.addEventListener("click", () => {
       document.querySelectorAll(".filter-btn").forEach((b) => b.classList.remove("active"))
       btn.classList.add("active")
-      currentFilter = btn.getAttribute("data-branch")
+      currentFilter = btn.getAttribute(`data-${currentLanguage}`)
       renderProjects()
     })
   })
-
+  currentFilter = document.querySelector(".filter-btn.active").getAttribute(`data-${currentLanguage}`)
   renderProjects()
 }
 
 function renderProjects() {
-  const grid = document.getElementById("projects-grid")
-  grid.innerHTML = ""
+  const grid = document.getElementById("projects-grid");
+  grid.innerHTML = "";
 
   const filteredProjects = projects.filter((project) => {
-    if (currentFilter === "all") return true
-    return project.branch[currentLanguage] === currentFilter
-  })
+    if (currentFilter === "Todos" || currentFilter === "All") return true;
+    return project.branch[currentLanguage] === currentFilter;
+  });
 
   filteredProjects.forEach((project) => {
-    const card = document.createElement("div")
-    card.className = "project-card"
+    const card = document.createElement("div");
+    card.className = "project-card";
     card.innerHTML = `
       <img src="${project.image}" alt="${project.title[currentLanguage]}" class="project-image">
       <div class="project-header">
@@ -503,13 +556,13 @@ function renderProjects() {
                    <line x1="16" y1="17" x2="8" y2="17"></line>
                    <polyline points="10 9 9 9 8 9"></polyline>
                  </svg>
-                 Ver PDF`
+                 ${project.buttonText[currentLanguage]}`
               : `<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                    <polyline points="15 3 21 3 21 9"></polyline>
                    <line x1="10" y1="14" x2="21" y2="3"></line>
                  </svg>
-                 Ver proyecto`
+                 ${project.buttonText[currentLanguage]}`
           }
         </a>
       </div>
