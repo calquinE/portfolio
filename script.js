@@ -6,19 +6,103 @@ let currentFilter = "all"
 
 // Data
 const skills = [
-  { name: "Python", icon: "./img/skills/python.png" },
-  { name: "MATLAB", icon: "./img/skills/matlab.png" },
-  { name: "AutoCAD", icon: "./img/skills/autocad.png" },
-  { name: "EASE", icon: "./img/skills/ease.png" },
-  { name: "Smaart", icon: "./img/skills/smaart.png" }, 
-  { name: "CadnaA", icon: "./img/skills/cadnaa.svg" },
-  { name: "Office", icon: "./img/skills/office.png" },
-  { name: "LaTeX", icon: "./img/skills/latex.png" },
-  { name: "Multisim", icon: "./img/skills/multisim.webp" },
-  { name: "Altium", icon: "./img/skills/altium.png" },
-  { name: "ProTools", icon: "./img/skills/protools.png" },
-  { name: "Audacity", icon: "./img/skills/audacity.svg" },
-]
+  { 
+    name: "Python", 
+    icon: "./img/skills/python.png",
+    description: {
+      es: "Lenguaje de programación versátil para desarrollo de software, análisis de datos y automatización.",
+      en: "Versatile programming language for software development, data analysis, and automation."
+    }
+  },
+  { 
+    name: "MATLAB", 
+    icon: "./img/skills/matlab.png",
+    description: {
+      es: "Software para cálculo numérico, análisis de datos y simulación matemática.",
+      en: "Software for numerical computing, data analysis, and mathematical simulation."
+    }
+  },
+  { 
+    name: "AutoCAD", 
+    icon: "./img/skills/autocad.png",
+    description: {
+      es: "Herramienta de diseño asistido por computadora para dibujo técnico y modelado 3D.",
+      en: "Computer-aided design tool for technical drawing and 3D modeling."
+    }
+  },
+  { 
+    name: "EASE", 
+    icon: "./img/skills/ease.png",
+    description: {
+      es: "Software para modelado acústico y simulación de sonido en entornos arquitectónicos.",
+      en: "Software for acoustic modeling and sound simulation in architectural environments."
+    }
+  },
+  { 
+    name: "Smaart", 
+    icon: "./img/skills/smaart.png",
+    description: {
+      es: "Herramienta para medición y análisis de audio en tiempo real.",
+      en: "Tool for real-time audio measurement and analysis."
+    }
+  },
+  { 
+    name: "CadnaA", 
+    icon: "./img/skills/cadnaa.svg",
+    description: {
+      es: "Software para predicción y evaluación de ruido ambiental.",
+      en: "Software for environmental noise prediction and assessment."
+    }
+  },
+  { 
+    name: "Office", 
+    icon: "./img/skills/office.png",
+    description: {
+      es: "Suite de herramientas de productividad para documentos, hojas de cálculo y presentaciones.",
+      en: "Productivity suite for documents, spreadsheets, and presentations."
+    }
+  },
+  { 
+    name: "LaTeX", 
+    icon: "./img/skills/latex.png",
+    description: {
+      es: "Sistema de composición tipográfica para documentos científicos y técnicos.",
+      en: "Typesetting system for scientific and technical documents."
+    }
+  },
+  { 
+    name: "Multisim", 
+    icon: "./img/skills/multisim.webp",
+    description: {
+      es: "Simulador de circuitos electrónicos para diseño y análisis de esquemas.",
+      en: "Electronic circuit simulator for schematic design and analysis."
+    }
+  },
+  { 
+    name: "Altium", 
+    icon: "./img/skills/altium.png",
+    description: {
+      es: "Plataforma para diseño de circuitos impresos y sistemas electrónicos.",
+      en: "Platform for printed circuit board design and electronic systems."
+    }
+  },
+  { 
+    name: "ProTools", 
+    icon: "./img/skills/protools.png",
+    description: {
+      es: "Estación de trabajo de audio digital para grabación, edición y mezcla profesional.",
+      en: "Digital audio workstation for professional recording, editing, and mixing."
+    }
+  },
+  { 
+    name: "Audacity", 
+    icon: "./img/skills/audacity.svg",
+    description: {
+      es: "Software gratuito para grabación y edición de audio.",
+      en: "Free software for audio recording and editing."
+    }
+  },
+];
 
 const projects = [
   {
@@ -44,7 +128,7 @@ const projects = [
       en: "Development and optimisation of a multichannel audio control system for sound localisation tests, laboratory acoustic calibration, and execution of auditory experiments at the Instituto Superior de Otorrinolaringología (ISO)."
     },
     branch: { es: "Acústica", en: "Acoustics" },
-    technologies: ["Python", "MATLAB", "Arduino"],
+    technologies: ["Python", "MATLAB"],
     image: "./img/proyectos/pps_iso.jpg",
     link: "./pdf/pps_iso.pdf",
     type: "pdf",
@@ -491,13 +575,42 @@ function initSkills() {
 }
 
 function createSkillCard(skill) {
-    const card = document.createElement("div");
-    card.className = "skill-card";
-    card.innerHTML = `
-        <div class="skill-icon"><img src="${skill.icon}" alt="${skill.name} icon" /></div>
-        <div class="skill-name">${skill.name}</div>
-    `;
-    return card;
+  const card = document.createElement("div");
+  card.className = "skill-card";
+  card.innerHTML = `
+      <div class="skill-icon"><img src="${skill.icon}" alt="${skill.name} icon" /></div>
+      <div class="skill-name">${skill.name}</div>
+  `;
+  
+  // Add click event to show modal
+  card.addEventListener("click", () => showSkillModal(skill));
+  
+  return card;
+}
+
+function showSkillModal(skill) {
+  const modal = document.getElementById("skill-modal");
+  const title = document.getElementById("skill-modal-title");
+  const description = document.getElementById("skill-modal-description");
+  const closeBtn = document.getElementById("skill-modal-close");
+  
+  title.textContent = skill.name;
+  description.textContent = skill.description[currentLanguage];
+  
+  modal.style.display = "block";
+  
+  // Close modal on button click or overlay click
+  const closeModal = () => {
+      modal.style.display = "none";
+  };
+  
+  closeBtn.addEventListener("click", closeModal);
+  modal.querySelector(".skill-modal-overlay").addEventListener("click", closeModal);
+  
+  // Optional: Close on Escape key
+  document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") closeModal();
+  });
 }
 
 function startAutoScroll() {
