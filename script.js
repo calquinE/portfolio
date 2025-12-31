@@ -37,6 +37,21 @@ const projects = [
   },
   {
     id: 2,
+    title: {
+      es: "Práctica Profesional Supervisada – ISO", en: "Supervised Professional Practice – ISO"},
+    description: {
+      es: "Desarrollo y optimización de un sistema de control de audio multicanal para pruebas de localización sonora, calibración acústica del laboratorio y ejecución de ensayos auditivos en el Instituto Superior de Otorrinolaringología (ISO).",
+      en: "Development and optimisation of a multichannel audio control system for sound localisation tests, laboratory acoustic calibration, and execution of auditory experiments at the Instituto Superior de Otorrinolaringología (ISO)."
+    },
+    branch: { es: "Acústica", en: "Acoustics" },
+    technologies: ["Python", "MATLAB", "Arduino"],
+    image: "./img/proyectos/pps_iso.jpg",
+    link: "./pdf/pps_iso.pdf",
+    type: "pdf",
+    buttonText: { es: "Ver informe", en: "View report" },
+  },
+  {
+    id: 3,
     title: { es: "Generador Pulsado", en: "Pulsed Generator" },
     description: {
       es: "Modificaciones a un generador pulsado cuya frecuencia de onda senoidal como de tren de pulsos puede ser ajustada por el usuario.",
@@ -50,7 +65,7 @@ const projects = [
     buttonText: { es: "Ver PDF", en: "View PDF" },
   },
   {
-    id: 3,
+    id: 4,
     title: { es: "Soka Gakkai", en: "Soka Gakkai" },
     description: {
       es: "Mediciones acústicas, tanto en el área de audiencia como del escenario, del Auditorio de la Paz del Soka Gakkai de Argentina.",
@@ -64,7 +79,7 @@ const projects = [
     buttonText: { es: "Ver PDF", en: "View PDF" },
   },
   {
-    id: 4,
+    id: 5,
     title: { es: "Medición de sistema electroacústico", en: "Electroacoustic System Measurement"},
     description: {
       es: "Medición y análisis eléctrico y acústico de un sistema electroacústico. Se realizaron pruebas de impedancia, parámetros Thiele-Small, respuesta al impulso y simulaciones comparativas con resultados experimentales.",
@@ -78,7 +93,7 @@ const projects = [
     buttonText: { es: "Ver PDF", en: "View PDF" },
   },
   {
-    id: 5,
+    id: 6,
     title: { es: "Manfred", en: "Manfred" },
     description: {
       es: "Grabación y edición de foley para corto animado Manfred (se recomienda escuchar con auriculares).",
@@ -92,7 +107,7 @@ const projects = [
     buttonText: { es: "Ver proyecto", en: "View project" },
   },
   {
-    id: 6,
+    id: 7,
     title: { es: "Medición de Directividad", en: "Directivity Measurement" },
     description: {
       es: "Análisis sobre la directividad de un sistema formado por un driver de compresión y una bocina.",
@@ -106,7 +121,7 @@ const projects = [
     buttonText: { es: "Ver PDF", en: "View PDF" },
   },
   {
-    id: 7,
+    id: 8,
     title: { es: "Procesador de RIRs", en: "RIR Processor" },
     description: {
       es: "Desarrollo, en Python, de un programa para el cálculo de parámetros acústicos de salas a partir de respuestas al impulso.",
@@ -120,7 +135,7 @@ const projects = [
     buttonText: { es: "Ver PDF", en: "View PDF" },
   },
   {
-    id: 8,
+    id: 9,
     title: { es: "Auditorio Niccolò Paganini", en: "Niccolò Paganini Auditorium" },
     description: {
       es: "Modelado geométrico y acústico del auditorio Niccolo Paganini en Parma, Italia, utilizando el software EASE.",
@@ -134,7 +149,7 @@ const projects = [
     buttonText: { es: "Ver PDF", en: "View PDF" },
   },
   {
-    id: 9,
+    id: 10,
     title: { es: "Mapa de Ruido", en: "Noise Map" },
     description: {
       es: "Confección de un mapa de ruido en CadnaA de zona comercial de la ciudad de Caseros, Buenos Aires. Además, se hicieron mediciones para la validación del mismo.",
