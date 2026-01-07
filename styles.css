@@ -425,6 +425,7 @@ body {
     min-width: 10rem;
     flex-shrink: 0;
     margin: 1rem 0;
+    transition: all 0.3s ease;
 }
 
 .skill-icon {
@@ -476,7 +477,7 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: var(--card); /* Matches your theme */
+    background-color: var(--card);
     border-radius: var(--radius);
     padding: 2rem;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -505,11 +506,22 @@ body {
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
-    color: var(--text); /* Adapts to theme */
+    color: var(--text);
 }
 
 .skill-modal-close:hover {
-    color: var(--accent); /* Assuming you have an accent color */
+    color: var(--accent);
+}
+
+.skill-card-active {
+  border: 2px solid var(--accent); /* Usa variable de acento para que se adapte al tema */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra sutil para resaltado */
+  transform: scale(1.05); /* Ligero zoom para énfasis */
+}
+
+/* Ajustes para tema oscuro (si es necesario, hereda de --accent) */
+.dark .skill-card-active {
+  box-shadow: 0 0 10px var(--accent);
 }
 
 /* Projects Section */

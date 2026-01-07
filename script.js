@@ -481,97 +481,104 @@ let isPaused = false; // Para pausa en hover o drag
 let currentTranslate = 0; // Posición actual (global)
 let isDragging = false; // Para saber si estamos arrastrando
 let startX = 0; // Posición inicial del mouse/touch
+let isModalOpen = false; // Para pausa durante modal
+let hasDragged = false; // Detecta si se arrastró (evita click accidental)
 
 function initSkills() {
-    const skillsTrack = document.getElementById("skills-track");
-    const carousel = document.getElementById("skills-carousel");
+  const skillsTrack = document.getElementById("skills-track");
+  const carousel = document.getElementById("skills-carousel");
 
-    if (!skillsTrack || !carousel) {
-        console.error("Elementos del carrusel no encontrados");
-        return;
-    }
+  if (!skillsTrack || !carousel) {
+      console.error("Elementos del carrusel no encontrados");
+      return;
+  }
 
-    // Duplica los skills para infinito
-    const doubledSkills = [...skills, ...skills];
-    doubledSkills.forEach((skill) => {
-        const card = createSkillCard(skill);
-        skillsTrack.appendChild(card);
-    });
+  // Duplica los skills para infinito
+  const doubledSkills = [...skills, ...skills];
+  doubledSkills.forEach((skill) => {
+      const card = createSkillCard(skill);
+      skillsTrack.appendChild(card);
+  });
 
-    // Inicia auto-scroll suave
-    startAutoScroll();
+  // Inicia auto-scroll suave
+  startAutoScroll();
 
-    // Pausa en hover (desktop)
-    if (window.innerWidth >= 768) {
-        carousel.addEventListener("mouseenter", () => {
-            isPaused = true;
-            carousel.style.cursor = "grab"
-        });
-        carousel.addEventListener("mouseleave", () => {
-            isPaused = false;
-        });
-    }
+  // Pausa en hover (desktop)
+  if (window.innerWidth >= 768) {
+      carousel.addEventListener("mouseenter", () => {
+          isPaused = true;
+          carousel.style.cursor = "grab";
+      });
+      carousel.addEventListener("mouseleave", () => {
+          isPaused = false;
+      });
+  }
 
-    // Eventos para drag (desktop) y swipe (mobile)
-    // Mouse events para desktop
-    carousel.addEventListener("mousedown", (e) => {
-        if (window.innerWidth >= 768) { // Solo desktop
-            isDragging = true;
-            isPaused = true;
-            startX = e.clientX;
-            carousel.style.cursor = "grabbing";
-        }
-    });
+  // Eventos para drag (desktop) y swipe (mobile)
+  // Mouse events para desktop
+  carousel.addEventListener("mousedown", (e) => {
+      if (window.innerWidth >= 768) { // Solo desktop
+          isDragging = true;
+          isPaused = true;
+          startX = e.clientX;
+          hasDragged = false; // Resetea el flag al iniciar
+          carousel.style.cursor = "grabbing";
+      }
+  });
 
-    document.addEventListener("mousemove", (e) => {
-        if (isDragging && window.innerWidth >= 768) {
-            const deltaX = e.clientX - startX;
-            currentTranslate += deltaX; // Mueve según el delta
-            startX = e.clientX; // Actualiza startX para movimiento continuo
-            // Limita para infinito: resetea si sale de rango
-            if (currentTranslate > 0) {
-                currentTranslate = -skillsTrack.scrollWidth / 2;
-            } else if (Math.abs(currentTranslate) >= skillsTrack.scrollWidth / 2) {
-                currentTranslate = 0;
-            }
-            skillsTrack.style.transform = `translateX(${currentTranslate}px)`;
-        }
-    });
+  document.addEventListener("mousemove", (e) => {
+      if (isDragging && window.innerWidth >= 768) {
+          const deltaX = e.clientX - startX;
+          if (Math.abs(deltaX) > 3) { // Umbral: si se movió más de 3px, considera drag
+              hasDragged = true;
+          }
+          currentTranslate += deltaX; // Mueve según el delta
+          startX = e.clientX; // Actualiza startX para movimiento continuo
+          // Limita para infinito: resetea si sale de rango
+          if (currentTranslate > 0) {
+              currentTranslate = -skillsTrack.scrollWidth / 2;
+          } else if (Math.abs(currentTranslate) >= skillsTrack.scrollWidth / 2) {
+              currentTranslate = 0;
+          }
+          skillsTrack.style.transform = `translateX(${currentTranslate}px)`;
+      }
+  });
 
-    document.addEventListener("mouseup", () => {
-        if (isDragging) {
-            isDragging = false;
-            isPaused = false;
-            carousel.style.cursor = "grab";
-        }
-    });
+  document.addEventListener("mouseup", () => {
+      if (isDragging) {
+          isDragging = false;
+          isPaused = false;
+          carousel.style.cursor = "grab";
+          // hasDragged se mantiene hasta el próximo mousedown
+      }
+  });
 
-    // Touch events para mobile (swipe/drag)
-    carousel.addEventListener("touchstart", (e) => {
-        isDragging = true;
-        isPaused = true;
-        startX = e.touches[0].clientX;
-    });
+  // Touch events para mobile (swipe/drag) - permanecen igual
+  carousel.addEventListener("touchstart", (e) => {
+      isDragging = true;
+      isPaused = true;
+      startX = e.touches[0].clientX;
+  });
 
-    carousel.addEventListener("touchmove", (e) => {
-        if (isDragging) {
-            const deltaX = e.touches[0].clientX - startX;
-            currentTranslate += deltaX;
-            startX = e.touches[0].clientX;
-            // Limita para infinito
-            if (currentTranslate > 0) {
-                currentTranslate = -skillsTrack.scrollWidth / 2;
-            } else if (Math.abs(currentTranslate) >= skillsTrack.scrollWidth / 2) {
-                currentTranslate = 0;
-            }
-            skillsTrack.style.transform = `translateX(${currentTranslate}px)`;
-        }
-    });
+  carousel.addEventListener("touchmove", (e) => {
+      if (isDragging) {
+          const deltaX = e.touches[0].clientX - startX;
+          currentTranslate += deltaX;
+          startX = e.touches[0].clientX;
+          // Limita para infinito
+          if (currentTranslate > 0) {
+              currentTranslate = -skillsTrack.scrollWidth / 2;
+          } else if (Math.abs(currentTranslate) >= skillsTrack.scrollWidth / 2) {
+              currentTranslate = 0;
+          }
+          skillsTrack.style.transform = `translateX(${currentTranslate}px)`;
+      }
+  });
 
-    carousel.addEventListener("touchend", () => {
-        isDragging = false;
-        isPaused = false;
-    });
+  carousel.addEventListener("touchend", () => {
+      isDragging = false;
+      isPaused = false;
+  });
 }
 
 function createSkillCard(skill) {
@@ -582,13 +589,17 @@ function createSkillCard(skill) {
       <div class="skill-name">${skill.name}</div>
   `;
   
-  // Add click event to show modal
-  card.addEventListener("click", () => showSkillModal(skill));
+  // Add click event to show modal, pero solo si no se arrastró
+  card.addEventListener("click", () => {
+      if (!hasDragged) { // Solo abre si no hubo drag
+          showSkillModal(skill, card);
+      }
+  });
   
   return card;
 }
 
-function showSkillModal(skill) {
+function showSkillModal(skill, card) {
   const modal = document.getElementById("skill-modal");
   const title = document.getElementById("skill-modal-title");
   const description = document.getElementById("skill-modal-description");
@@ -597,11 +608,15 @@ function showSkillModal(skill) {
   title.textContent = skill.name;
   description.textContent = skill.description[currentLanguage];
   
+  isModalOpen = true; // Pausa el carrusel
+  card.classList.add("skill-card-active"); // Resalta la tarjeta
   modal.style.display = "block";
   
   // Close modal on button click or overlay click
   const closeModal = () => {
       modal.style.display = "none";
+      card.classList.remove("skill-card-active"); // Remueve el resaltado
+      isModalOpen = false; // Reanuda el carrusel
   };
   
   closeBtn.addEventListener("click", closeModal);
@@ -617,7 +632,7 @@ function startAutoScroll() {
     const skillsTrack = document.getElementById("skills-track");
 
     function animate() {
-        if (!isPaused && !isDragging) {
+        if (!isPaused && !isDragging && !isModalOpen) {
             currentTranslate -= 0.4; // Velocidad
             if (Math.abs(currentTranslate) >= skillsTrack.scrollWidth / 2) {
                 currentTranslate = 0; // Resetea para infinito
