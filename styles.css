@@ -452,65 +452,75 @@ body {
     font-weight: 500;
 }
 
-/* Skill Modal */
-.skill-modal {
-    display: none; /* Hidden by default */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 1000; /* Ensure it's on top */
+/* Skill Tooltip */
+.skill-tooltip {
+  display: none; 
+  position: fixed;
+  z-index: 1000;
+  max-width: 250px;
+  pointer-events: auto;
 }
 
-.skill-modal-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+.skill-tooltip-content {
+  background-color: var(--card);
+  border-radius: var(--radius);
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  font-size: 0.9rem;
+  position: relative;
 }
 
-.skill-modal-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: var(--card);
-    border-radius: var(--radius);
-    padding: 2rem;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    max-width: 90vw;
-    max-height: 80vh;
-    overflow-y: auto;
-    text-align: center;
+.skill-tooltip-content h4 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1rem;
+  font-weight: 600;
 }
 
-.skill-modal-content h3 {
-    margin: 0 0 1rem 0;
-    font-size: 1.5rem;
-    font-weight: 600;
+.skill-tooltip-content p {
+  margin: 0;
+  line-height: 1.4;
 }
 
-.skill-modal-content p {
-    margin: 0 0 1.5rem 0;
-    line-height: 1.5;
+.skill-tooltip-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid var(--card);
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
-.skill-modal-close {
-    position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
-    background: none;
-    border: none;
-    font-size: 1.5rem;
-    cursor: pointer;
-    color: var(--text);
+.skill-tooltip-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: var(--text);
+  line-height: 1;
 }
 
-.skill-modal-close:hover {
-    color: var(--accent);
+.skill-tooltip-close:hover {
+  color: var(--accent);
+}
+
+/* Posición alternativa (si está arriba) */
+.skill-tooltip.top .skill-tooltip-arrow {
+  border-top: none;
+  border-bottom: 8px solid var(--card);
+  top: -8px;
+  bottom: auto;
+}
+
+/* Dark theme adjustments */
+.dark .skill-tooltip-content {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
 .skill-card-active {
@@ -519,7 +529,7 @@ body {
   transform: scale(1.05); /* Ligero zoom para énfasis */
 }
 
-/* Ajustes para tema oscuro (si es necesario, hereda de --accent) */
+/* Ajustes para tema oscuro */
 .dark .skill-card-active {
   box-shadow: 0 0 10px var(--accent);
 }

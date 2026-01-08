@@ -592,40 +592,81 @@ function createSkillCard(skill) {
   // Add click event to show modal, pero solo si no se arrastró
   card.addEventListener("click", () => {
       if (!hasDragged) { // Solo abre si no hubo drag
-          showSkillModal(skill, card);
+          showSkillTooltip(skill, card);
       }
   });
   
   return card;
 }
 
-function showSkillModal(skill, card) {
-  const modal = document.getElementById("skill-modal");
-  const title = document.getElementById("skill-modal-title");
-  const description = document.getElementById("skill-modal-description");
-  const closeBtn = document.getElementById("skill-modal-close");
+function showSkillTooltip(skill, card) {
+  const tooltip = document.getElementById("skill-tooltip");
+  const title = document.getElementById("skill-tooltip-title");
+  const description = document.getElementById("skill-tooltip-description");
+  const closeBtn = document.getElementById("skill-tooltip-close");
   
   title.textContent = skill.name;
   description.textContent = skill.description[currentLanguage];
   
   isModalOpen = true; // Pausa el carrusel
   card.classList.add("skill-card-active"); // Resalta la tarjeta
-  modal.style.display = "block";
   
-  // Close modal on button click or overlay click
-  const closeModal = () => {
-      modal.style.display = "none";
-      card.classList.remove("skill-card-active"); // Remueve el resaltado
+  // Calcula altura real del tooltip
+  tooltip.style.display = "block"; // Muestra temporalmente para medir
+  tooltip.style.visibility = "hidden"; // Oculta visualmente pero permite medir
+  const actualTooltipHeight = tooltip.offsetHeight;
+  tooltip.style.display = "none";
+  tooltip.style.visibility = "visible";
+  
+  // Posicionamiento al borde de la tarjeta
+  const cardRect = card.getBoundingClientRect();
+  const offset = 18; // Espacio para la flecha
+  
+  // Decide si arriba o abajo
+  let top;
+  if (cardRect.top > actualTooltipHeight + offset) {
+      // Arriba: borde inferior del tooltip toca borde superior de la tarjeta
+      top = cardRect.top - actualTooltipHeight - offset;
+      tooltip.classList.remove("top");
+      console.log('Posición: arriba, top calculado:', top);
+  } else {
+      // Abajo: borde superior del tooltip toca borde inferior de la tarjeta
+      top = cardRect.bottom + offset;
+      tooltip.classList.add("top");
+      console.log('Posición: abajo, top calculado:', top);
+  }
+  
+  // Evita que se salga de pantalla
+  top = Math.max(0, Math.min(top, window.innerHeight - actualTooltipHeight));
+  
+  tooltip.style.top = `${top}px`;
+  tooltip.style.left = `${cardRect.left + cardRect.width / 2 - 125}px`; // Centrado
+  tooltip.style.display = "block";
+  
+  // Cierra el tooltip manualmente
+  const closeTooltip = () => {
+      tooltip.style.display = "none";
+      card.classList.remove("skill-card-active");
       isModalOpen = false; // Reanuda el carrusel
+      document.removeEventListener("click", handleOutsideClick);
+      document.removeEventListener("keydown", handleEscape);
   };
   
-  closeBtn.addEventListener("click", closeModal);
-  modal.querySelector(".skill-modal-overlay").addEventListener("click", closeModal);
+  const handleOutsideClick = (e) => {
+      if (!tooltip.contains(e.target) && !card.contains(e.target)) {
+          closeTooltip();
+      }
+  };
   
-  // Optional: Close on Escape key
-  document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closeModal();
-  });
+  const handleEscape = (e) => {
+      if (e.key === "Escape") {
+          closeTooltip();
+      }
+  };
+  
+  closeBtn.addEventListener("click", closeTooltip);
+  document.addEventListener("click", handleOutsideClick);
+  document.addEventListener("keydown", handleEscape);
 }
 
 function startAutoScroll() {
