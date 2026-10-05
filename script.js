@@ -1,113 +1,116 @@
 // State
-let currentLanguage = "es"
-let currentTheme = "light"
-let currentSkillIndex = 0
-let currentFilter = "all"
+let currentLanguage = "es";
+let currentTheme = "light";
+let currentSkillIndex = 0;
+let currentFilter = "all";
 
 // Data
 const skills = [
-  { 
-    name: "Python", 
+  {
+    name: "Python",
     icon: "./img/skills/python.png",
     description: {
       es: "Lenguaje de programación versátil para desarrollo de software, análisis de datos y automatización.",
-      en: "Versatile programming language for software development, data analysis, and automation."
-    }
+      en: "Versatile programming language for software development, data analysis, and automation.",
+    },
   },
-  { 
-    name: "MATLAB", 
+  {
+    name: "MATLAB",
     icon: "./img/skills/matlab.png",
     description: {
       es: "Software para cálculo numérico, análisis de datos y simulación matemática.",
-      en: "Software for numerical computing, data analysis, and mathematical simulation."
-    }
+      en: "Software for numerical computing, data analysis, and mathematical simulation.",
+    },
   },
-  { 
-    name: "AutoCAD", 
+  {
+    name: "AutoCAD",
     icon: "./img/skills/autocad.png",
     description: {
       es: "Herramienta de diseño asistido por computadora para dibujo técnico y modelado 3D.",
-      en: "Computer-aided design tool for technical drawing and 3D modeling."
-    }
+      en: "Computer-aided design tool for technical drawing and 3D modeling.",
+    },
   },
-  { 
-    name: "EASE", 
+  {
+    name: "EASE",
     icon: "./img/skills/ease.png",
     description: {
       es: "Software para modelado acústico y simulación de sonido en entornos arquitectónicos.",
-      en: "Software for acoustic modeling and sound simulation in architectural environments."
-    }
+      en: "Software for acoustic modeling and sound simulation in architectural environments.",
+    },
   },
-  { 
-    name: "Smaart", 
+  {
+    name: "Smaart",
     icon: "./img/skills/smaart.png",
     description: {
       es: "Herramienta para medición y análisis de audio en tiempo real.",
-      en: "Tool for real-time audio measurement and analysis."
-    }
+      en: "Tool for real-time audio measurement and analysis.",
+    },
   },
-  { 
-    name: "CadnaA", 
+  {
+    name: "CadnaA",
     icon: "./img/skills/cadnaa.svg",
     description: {
       es: "Software para predicción y evaluación de ruido ambiental.",
-      en: "Software for environmental noise prediction and assessment."
-    }
+      en: "Software for environmental noise prediction and assessment.",
+    },
   },
-  { 
-    name: "Office", 
+  {
+    name: "Office",
     icon: "./img/skills/office.png",
     description: {
       es: "Suite de herramientas de productividad para documentos, hojas de cálculo y presentaciones.",
-      en: "Productivity suite for documents, spreadsheets, and presentations."
-    }
+      en: "Productivity suite for documents, spreadsheets, and presentations.",
+    },
   },
-  { 
-    name: "LaTeX", 
+  {
+    name: "LaTeX",
     icon: "./img/skills/latex.png",
     description: {
       es: "Sistema de composición tipográfica para documentos científicos y técnicos.",
-      en: "Typesetting system for scientific and technical documents."
-    }
+      en: "Typesetting system for scientific and technical documents.",
+    },
   },
-  { 
-    name: "Multisim", 
+  {
+    name: "Multisim",
     icon: "./img/skills/multisim.webp",
     description: {
       es: "Simulador de circuitos electrónicos para diseño y análisis de esquemas.",
-      en: "Electronic circuit simulator for schematic design and analysis."
-    }
+      en: "Electronic circuit simulator for schematic design and analysis.",
+    },
   },
-  { 
-    name: "Altium", 
+  {
+    name: "Altium",
     icon: "./img/skills/altium.png",
     description: {
       es: "Plataforma para diseño de circuitos impresos y sistemas electrónicos.",
-      en: "Platform for printed circuit board design and electronic systems."
-    }
+      en: "Platform for printed circuit board design and electronic systems.",
+    },
   },
-  { 
-    name: "ProTools", 
+  {
+    name: "ProTools",
     icon: "./img/skills/protools.png",
     description: {
       es: "Estación de trabajo de audio digital para grabación, edición y mezcla profesional.",
-      en: "Digital audio workstation for professional recording, editing, and mixing."
-    }
+      en: "Digital audio workstation for professional recording, editing, and mixing.",
+    },
   },
-  { 
-    name: "Audacity", 
+  {
+    name: "Audacity",
     icon: "./img/skills/audacity.svg",
     description: {
       es: "Software gratuito para grabación y edición de audio.",
-      en: "Free software for audio recording and editing."
-    }
+      en: "Free software for audio recording and editing.",
+    },
   },
 ];
 
 const projects = [
   {
     id: 1,
-    title: { es: "Ruido del freehub de bicicleta", en: "Bicycle Freehub Noise" },
+    title: {
+      es: "Ruido del freehub de bicicleta",
+      en: "Bicycle Freehub Noise",
+    },
     description: {
       es: "Proyecto de tesis de grado centrado en el estudio psicoacústico del ruido del freehub, combinando análisis físico, perceptivo y estadístico en distintos contextos de escucha.",
       en: "Undergraduate thesis project focused on the psychoacoustic study of bicycle freehub noise, combining physical, perceptual, and statistical analysis across different listening contexts.",
@@ -122,10 +125,12 @@ const projects = [
   {
     id: 2,
     title: {
-      es: "Práctica Profesional Supervisada – ISO", en: "Supervised Professional Practice – ISO"},
+      es: "Práctica Profesional Supervisada – ISO",
+      en: "Supervised Professional Practice – ISO",
+    },
     description: {
       es: "Desarrollo y optimización de un sistema de control de audio multicanal para pruebas de localización sonora, calibración acústica del laboratorio y ejecución de ensayos auditivos en el Instituto Superior de Otorrinolaringología (ISO).",
-      en: "Development and optimisation of a multichannel audio control system for sound localisation tests, laboratory acoustic calibration, and execution of auditory experiments at the Instituto Superior de Otorrinolaringología (ISO)."
+      en: "Development and optimisation of a multichannel audio control system for sound localisation tests, laboratory acoustic calibration, and execution of auditory experiments at the Instituto Superior de Otorrinolaringología (ISO).",
     },
     branch: { es: "Acústica", en: "Acoustics" },
     technologies: ["Python", "MATLAB"],
@@ -164,7 +169,10 @@ const projects = [
   },
   {
     id: 5,
-    title: { es: "Medición de sistema electroacústico", en: "Electroacoustic System Measurement"},
+    title: {
+      es: "Medición de sistema electroacústico",
+      en: "Electroacoustic System Measurement",
+    },
     description: {
       es: "Medición y análisis eléctrico y acústico de un sistema electroacústico. Se realizaron pruebas de impedancia, parámetros Thiele-Small, respuesta al impulso y simulaciones comparativas con resultados experimentales.",
       en: "Electrical and acoustic measurement and analysis of an electroacoustic system. Impedance tests, Thiele–Small parameters, impulse response, and comparative simulations with experimental results were conducted.",
@@ -220,7 +228,10 @@ const projects = [
   },
   {
     id: 9,
-    title: { es: "Auditorio Niccolò Paganini", en: "Niccolò Paganini Auditorium" },
+    title: {
+      es: "Auditorio Niccolò Paganini",
+      en: "Niccolò Paganini Auditorium",
+    },
     description: {
       es: "Modelado geométrico y acústico del auditorio Niccolo Paganini en Parma, Italia, utilizando el software EASE.",
       en: "Geometric and acoustic modelling of the Niccolò Paganini Auditorium in Parma, Italy, using EASE software.",
@@ -246,13 +257,16 @@ const projects = [
     type: "pdf",
     buttonText: { es: "Ver PDF", en: "View PDF" },
   },
-]
+];
 
 const education = [
   {
     id: 3,
     degree: { es: "Ingeniería de Sonido", en: "Sound Engineering Degree" },
-    institution: { es: "Universidad Nacional de Tres de Febrero", en: "Universidad Nacional de Tres de Febrero" },
+    institution: {
+      es: "Universidad Nacional de Tres de Febrero",
+      en: "Universidad Nacional de Tres de Febrero",
+    },
     years: "2016 - 2025",
     description: {
       es: "La Ingeniería de Sonido aborda el estudio del fenómeno sonoro y las ondas mecánicas, cubriendo desde su producción hasta su recepción. La formación incluye investigación y emprendedorismo, con enfoque en tres áreas: Ciencias de la Grabación, Electrónica de Audio, y Acústica y Electroacústica, abarcando técnicas de registro, diseño de equipamiento y tratamiento acústico.",
@@ -261,8 +275,14 @@ const education = [
   },
   {
     id: 2,
-    degree: { es: "Técnico de Grabación y Sonido", en: "Recording and Sound Technician" },
-    institution: { es: "Universidad Nacional de Tres de Febrero", en: "Universidad Nacional de Tres de Febrero" },
+    degree: {
+      es: "Técnico de Grabación y Sonido",
+      en: "Recording and Sound Technician",
+    },
+    institution: {
+      es: "Universidad Nacional de Tres de Febrero",
+      en: "Universidad Nacional de Tres de Febrero",
+    },
     years: "2016 - 2022",
     description: {
       es: "Técnico especializado en grabación y sonido, con capacidad para operar equipamiento en vivo, en estudios de grabación y masterización, y en emisoras de radio y TV. Habilidad en la calibración de sistemas de reamplificación y en el diseño, instalación y mantenimiento de sistemas electroacústicos para sonorización en diversos entornos.",
@@ -271,22 +291,34 @@ const education = [
   },
   {
     id: 1,
-    degree: { es: "Técnico Electricista con Orientación en Electrónica Industrial", en: "Electrical Technician with Orientation in Industrial Electronics" },
-    institution: { es: "Escuela Provincial de Enseñanza Técninca 11", en: "Escuela Provincial de Enseñanza Técninca 11" },
+    degree: {
+      es: "Técnico Electricista con Orientación en Electrónica Industrial",
+      en: "Electrical Technician with Orientation in Industrial Electronics",
+    },
+    institution: {
+      es: "Escuela Provincial de Enseñanza Técninca 11",
+      en: "Escuela Provincial de Enseñanza Técninca 11",
+    },
     years: "2010 - 2015",
     description: {
       es: "Formación técnica en electricidad con especialización en electrónica industrial, abarcando instalación, mantenimiento y reparación de sistemas eléctricos, así como la comprensión y manejo de circuitos electrónicos industriales. Adquirí habilidades prácticas en el uso de herramientas y equipos, junto con un enfoque en la seguridad y eficiencia energética.",
       en: "Technical training in electricity with a specialisation in industrial electronics, covering the installation, maintenance and repair of electrical systems, as well as the understanding and handling of industrial electronic circuits. I acquired practical skills in the use of tools and equipment, along with a focus on safety and energy efficiency.",
     },
   },
-]
+];
 
 const experience = [
   {
     id: 2,
     position: { es: "Práctica Profesional", en: "Senior Sound Engineer" },
-    company: { es: "Instituto Superior de Otorrinolaringología (ISO)", en: "Instituto Superior de Otorrinolaringología (ISO)" },
-    location: { es: "Ciudad Autónoma de Buenos Aires, Argentina", en: "Ciudad Autónoma de Buenos Aires, Argentina" },
+    company: {
+      es: "Instituto Superior de Otorrinolaringología (ISO)",
+      en: "Instituto Superior de Otorrinolaringología (ISO)",
+    },
+    location: {
+      es: "Ciudad Autónoma de Buenos Aires, Argentina",
+      en: "Ciudad Autónoma de Buenos Aires, Argentina",
+    },
     period: { es: "Sep 2024 - Nov 2024", en: "Sep 2024 - Nov 2024" },
     description: {
       es: "Participé activamente en la calibración acústica de sistemas de reproducción y optimización de software para pruebas de localización sonora en pacientes con implantes cocleares y normoyentes. También adquirí experiencia realizando pruebas auditivas y experimentos en entornos controlados, garantizando el cumplimiento de los protocolos éticos y de seguridad, lo que me permitió profundizar en el manejo de equipos especializados y en el análisis de datos de medición.",
@@ -296,22 +328,28 @@ const experience = [
   {
     id: 1,
     position: { es: "Pasantía", en: "Trainee" },
-    company: { es: "Cooperativa de Energía Eléctrica de Zapala (CEEZ)", en: "Cooperativa de Energía Eléctrica de Zapala (CEEZ)" },
-    location: { es: "Zapala, Neuquén, Argentina", en: "Zapala, Neuquén, Argentina" },
+    company: {
+      es: "Cooperativa de Energía Eléctrica de Zapala (CEEZ)",
+      en: "Cooperativa de Energía Eléctrica de Zapala (CEEZ)",
+    },
+    location: {
+      es: "Zapala, Neuquén, Argentina",
+      en: "Zapala, Neuquén, Argentina",
+    },
     period: { es: "Mar 2015 - Nov 2015", en: "Mar 2015 - Nov 2015" },
     description: {
       es: "Colaboré en la ejecución de proyectos de distribución eléctrica, desde la instalación de nuevas líneas hasta la ampliación de aquellas existentes. Asistí en el mantenimiento de estas redes, garantizando el correcto suministro en áreas residenciales y comerciales. También participé en la identificación y solución de fallas técnicas, así como en la supervisión de trabajos en campo.",
       en: "I collaborated in the execution of electricity distribution projects, from the installation of new lines to the extension of existing ones. I assisted in the maintenance of these networks, guaranteeing the correct supply in residential and commercial areas. I also participated in the identification and solution of technical failures.",
     },
   },
-]
+];
 
 const contactInfo = [
   {
     icon: "mail",
     title: { es: "Correo electrónico", en: "Email" },
-    value: "calco.epu@gmail.com",
-    link: "mailto:calco.epu@gmail.com",
+    value: "calquinepullan@gmail.com",
+    link: "mailto:calquinepullan@gmail.com",
   },
   {
     icon: "linkedin",
@@ -331,55 +369,55 @@ const contactInfo = [
     value: "Zapala, Neuquén, Argentina",
     link: "https://maps.app.goo.gl/JkNjtDGG794SzYT8A",
   },
-]
+];
 
 // Initialize
 document.addEventListener("DOMContentLoaded", () => {
-  initNavigation()
-  initTheme()
-  initLanguage()
-  initParticles()
-  initSkills()
-  initProjects()
-  initEducation()
-  initExperience()
-  initContact()
-})
+  initNavigation();
+  initTheme();
+  initLanguage();
+  initParticles();
+  initSkills();
+  initProjects();
+  initEducation();
+  initExperience();
+  initContact();
+});
 
 // Navigation
 function initNavigation() {
   window.addEventListener("scroll", () => {
-    const nav = document.getElementById("navigation")
+    const nav = document.getElementById("navigation");
     if (window.scrollY > 50) {
-      nav.classList.add("scrolled")
+      nav.classList.add("scrolled");
     } else {
-      nav.classList.remove("scrolled")
+      nav.classList.remove("scrolled");
     }
-  })
+  });
 
   // Language dropdown
-  const languageToggle = document.getElementById("language-toggle")
-  const languageMenu = document.getElementById("language-menu")
+  const languageToggle = document.getElementById("language-toggle");
+  const languageMenu = document.getElementById("language-menu");
 
   languageToggle.addEventListener("click", (e) => {
-    e.stopPropagation()
-    languageMenu.classList.toggle("show")
-  })
+    e.stopPropagation();
+    languageMenu.classList.toggle("show");
+  });
 
   document.addEventListener("click", () => {
-    languageMenu.classList.remove("show")
-  })
+    languageMenu.classList.remove("show");
+  });
 }
 
 function scrollToSection(sectionId) {
-  const element = document.getElementById(sectionId)
+  const element = document.getElementById(sectionId);
   if (element) {
-    element.scrollIntoView({ behavior: "smooth" })
+    element.scrollIntoView({ behavior: "smooth" });
   }
 }
 
 function scrollToTop() {
-  window.scrollTo({ top: 0, behavior: "smooth" })
+  window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
 // Theme
@@ -402,16 +440,21 @@ function initTheme() {
     applyTheme(savedTheme); // Usa lo guardado
   } else {
     // Si no hay guardado, usa la preferencia del sistema
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)",
+    ).matches;
     applyTheme(prefersDark ? "dark" : "light");
   }
 
   // Escucha cambios en el sistema
-  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
-    if (!localStorage.getItem("theme")) { // Solo actualiza si no hay guardado
-      applyTheme(e.matches ? "dark" : "light");
-    }
-      });
+  window
+    .matchMedia("(prefers-color-scheme: dark)")
+    .addEventListener("change", (e) => {
+      if (!localStorage.getItem("theme")) {
+        // Solo actualiza si no hay guardado
+        applyTheme(e.matches ? "dark" : "light");
+      }
+    });
 
   // Toggle manual: guarda en localStorage
   themeToggle.addEventListener("click", () => {
@@ -436,42 +479,48 @@ function initLanguage() {
 }
 
 function setLanguage(lang) {
-  currentLanguage = lang
-  document.documentElement.lang = lang
-  updateLanguage()
-  document.getElementById("language-menu").classList.remove("show")
+  currentLanguage = lang;
+  document.documentElement.lang = lang;
+  updateLanguage();
+  document.getElementById("language-menu").classList.remove("show");
   localStorage.setItem("language", lang); // Guarda la elección manual
 }
 
 function updateLanguage() {
   // Actualiza todos los elementos con los atributos data-es y data-en
   document.querySelectorAll("[data-es][data-en]").forEach((el) => {
-    el.textContent = el.getAttribute(`data-${currentLanguage}`)
-  })
+    el.textContent = el.getAttribute(`data-${currentLanguage}`);
+  });
 
   // Resetea el filtro a "Todos" cuando cambia el idioma
-  document.querySelectorAll(".filter-btn").forEach((btn) => btn.classList.remove("active"));
-  document.querySelector(".filter-btn[data-es='Todos']").classList.add("active"); // Asume que "Todos" es el botón "All"
-  currentFilter = document.querySelector(".filter-btn.active").getAttribute(`data-${currentLanguage}`);
+  document
+    .querySelectorAll(".filter-btn")
+    .forEach((btn) => btn.classList.remove("active"));
+  document
+    .querySelector(".filter-btn[data-es='Todos']")
+    .classList.add("active"); // Asume que "Todos" es el botón "All"
+  currentFilter = document
+    .querySelector(".filter-btn.active")
+    .getAttribute(`data-${currentLanguage}`);
 
   // Re-render dynamic content
-  renderProjects()
-  renderEducation()
-  renderExperience()
-  renderContact()
+  renderProjects();
+  renderEducation();
+  renderExperience();
+  renderContact();
 }
 
 // Particles
 function initParticles() {
-  const particlesContainer = document.getElementById("particles")
+  const particlesContainer = document.getElementById("particles");
   for (let i = 0; i < 20; i++) {
-    const particle = document.createElement("div")
-    particle.className = "particle"
-    particle.style.left = `${Math.random() * 100}%`
-    particle.style.top = `${Math.random() * 100}%`
-    particle.style.animationDelay = `${Math.random() * 5}s`
-    particle.style.animationDuration = `${5 + Math.random() * 10}s`
-    particlesContainer.appendChild(particle)
+    const particle = document.createElement("div");
+    particle.className = "particle";
+    particle.style.left = `${Math.random() * 100}%`;
+    particle.style.top = `${Math.random() * 100}%`;
+    particle.style.animationDelay = `${Math.random() * 5}s`;
+    particle.style.animationDuration = `${5 + Math.random() * 10}s`;
+    particlesContainer.appendChild(particle);
   }
 }
 
@@ -490,15 +539,15 @@ function initSkills() {
   const carousel = document.getElementById("skills-carousel");
 
   if (!skillsTrack || !carousel) {
-      console.error("Elementos del carrusel no encontrados");
-      return;
+    console.error("Elementos del carrusel no encontrados");
+    return;
   }
 
   // Duplica los skills para infinito
   const doubledSkills = [...skills, ...skills];
   doubledSkills.forEach((skill) => {
-      const card = createSkillCard(skill);
-      skillsTrack.appendChild(card);
+    const card = createSkillCard(skill);
+    skillsTrack.appendChild(card);
   });
 
   // Inicia auto-scroll suave
@@ -506,79 +555,81 @@ function initSkills() {
 
   // Pausa en hover (desktop)
   if (window.innerWidth >= 768) {
-      carousel.addEventListener("mouseenter", () => {
-          isPaused = true;
-          carousel.style.cursor = "grab";
-      });
-      carousel.addEventListener("mouseleave", () => {
-          isPaused = false;
-      });
+    carousel.addEventListener("mouseenter", () => {
+      isPaused = true;
+      carousel.style.cursor = "grab";
+    });
+    carousel.addEventListener("mouseleave", () => {
+      isPaused = false;
+    });
   }
 
   // Eventos para drag (desktop) y swipe (mobile)
   // Mouse events para desktop
   carousel.addEventListener("mousedown", (e) => {
-      if (window.innerWidth >= 768) { // Solo desktop
-          isDragging = true;
-          isPaused = true;
-          startX = e.clientX;
-          hasDragged = false; // Resetea el flag al iniciar
-          carousel.style.cursor = "grabbing";
-      }
+    if (window.innerWidth >= 768) {
+      // Solo desktop
+      isDragging = true;
+      isPaused = true;
+      startX = e.clientX;
+      hasDragged = false; // Resetea el flag al iniciar
+      carousel.style.cursor = "grabbing";
+    }
   });
 
   document.addEventListener("mousemove", (e) => {
-      if (isDragging && window.innerWidth >= 768) {
-          const deltaX = e.clientX - startX;
-          if (Math.abs(deltaX) > 3) { // Umbral: si se movió más de 3px, considera drag
-              hasDragged = true;
-          }
-          currentTranslate += deltaX; // Mueve según el delta
-          startX = e.clientX; // Actualiza startX para movimiento continuo
-          // Limita para infinito: resetea si sale de rango
-          if (currentTranslate > 0) {
-              currentTranslate = -skillsTrack.scrollWidth / 2;
-          } else if (Math.abs(currentTranslate) >= skillsTrack.scrollWidth / 2) {
-              currentTranslate = 0;
-          }
-          skillsTrack.style.transform = `translateX(${currentTranslate}px)`;
+    if (isDragging && window.innerWidth >= 768) {
+      const deltaX = e.clientX - startX;
+      if (Math.abs(deltaX) > 3) {
+        // Umbral: si se movió más de 3px, considera drag
+        hasDragged = true;
       }
+      currentTranslate += deltaX; // Mueve según el delta
+      startX = e.clientX; // Actualiza startX para movimiento continuo
+      // Limita para infinito: resetea si sale de rango
+      if (currentTranslate > 0) {
+        currentTranslate = -skillsTrack.scrollWidth / 2;
+      } else if (Math.abs(currentTranslate) >= skillsTrack.scrollWidth / 2) {
+        currentTranslate = 0;
+      }
+      skillsTrack.style.transform = `translateX(${currentTranslate}px)`;
+    }
   });
 
   document.addEventListener("mouseup", () => {
-      if (isDragging) {
-          isDragging = false;
-          isPaused = false;
-          carousel.style.cursor = "grab";
-          // hasDragged se mantiene hasta el próximo mousedown
-      }
+    if (isDragging) {
+      isDragging = false;
+      isPaused = false;
+      carousel.style.cursor = "grab";
+      // hasDragged se mantiene hasta el próximo mousedown
+    }
   });
 
   // Touch events para mobile (swipe/drag) - permanecen igual
   carousel.addEventListener("touchstart", (e) => {
-      isDragging = true;
-      isPaused = true;
-      startX = e.touches[0].clientX;
+    isDragging = true;
+    isPaused = true;
+    startX = e.touches[0].clientX;
   });
 
   carousel.addEventListener("touchmove", (e) => {
-      if (isDragging) {
-          const deltaX = e.touches[0].clientX - startX;
-          currentTranslate += deltaX;
-          startX = e.touches[0].clientX;
-          // Limita para infinito
-          if (currentTranslate > 0) {
-              currentTranslate = -skillsTrack.scrollWidth / 2;
-          } else if (Math.abs(currentTranslate) >= skillsTrack.scrollWidth / 2) {
-              currentTranslate = 0;
-          }
-          skillsTrack.style.transform = `translateX(${currentTranslate}px)`;
+    if (isDragging) {
+      const deltaX = e.touches[0].clientX - startX;
+      currentTranslate += deltaX;
+      startX = e.touches[0].clientX;
+      // Limita para infinito
+      if (currentTranslate > 0) {
+        currentTranslate = -skillsTrack.scrollWidth / 2;
+      } else if (Math.abs(currentTranslate) >= skillsTrack.scrollWidth / 2) {
+        currentTranslate = 0;
       }
+      skillsTrack.style.transform = `translateX(${currentTranslate}px)`;
+    }
   });
 
   carousel.addEventListener("touchend", () => {
-      isDragging = false;
-      isPaused = false;
+    isDragging = false;
+    isPaused = false;
   });
 }
 
@@ -589,102 +640,103 @@ function createSkillCard(skill) {
       <div class="skill-icon"><img src="${skill.icon}" alt="${skill.name} icon" /></div>
       <div class="skill-name">${skill.name}</div>
   `;
-  
+
   // Add click event to show modal, pero solo si no se arrastró
   card.addEventListener("click", () => {
-      if (!hasDragged) { // Solo abre si no hubo drag
-          showSkillTooltip(skill, card);
-      }
+    if (!hasDragged) {
+      // Solo abre si no hubo drag
+      showSkillTooltip(skill, card);
+    }
   });
-  
+
   return card;
 }
 
 function closeCurrentTooltip() {
-    if (currentTooltip) {
-        currentTooltip.style.display = "none";
-        const activeCard = document.querySelector(".skill-card-active");
-        if (activeCard) activeCard.classList.remove("skill-card-active");
-        isTooltipOpen = false; // Reanuda el carrusel
-        document.removeEventListener("click", currentTooltip.handleOutsideClick);
-        document.removeEventListener("keydown", currentTooltip.handleEscape);
-        currentTooltip = null;
-    }
+  if (currentTooltip) {
+    currentTooltip.style.display = "none";
+    const activeCard = document.querySelector(".skill-card-active");
+    if (activeCard) activeCard.classList.remove("skill-card-active");
+    isTooltipOpen = false; // Reanuda el carrusel
+    document.removeEventListener("click", currentTooltip.handleOutsideClick);
+    document.removeEventListener("keydown", currentTooltip.handleEscape);
+    currentTooltip = null;
+  }
 }
 
 function showSkillTooltip(skill, card) {
   // Cierra cualquier tooltip abierto
   closeCurrentTooltip();
-  
+
   const tooltip = document.getElementById("skill-tooltip");
   const title = document.getElementById("skill-tooltip-title");
   const description = document.getElementById("skill-tooltip-description");
   const closeBtn = document.getElementById("skill-tooltip-close");
-  
+
   title.textContent = skill.name;
   description.textContent = skill.description[currentLanguage];
-  
+
   isTooltipOpen = true; // Pausa el carrusel
   card.classList.add("skill-card-active"); // Resalta la tarjeta
-  
+
   // Calcula altura real del tooltip
   tooltip.style.display = "block";
   tooltip.style.visibility = "hidden";
   const actualTooltipHeight = tooltip.offsetHeight;
   tooltip.style.display = "none";
   tooltip.style.visibility = "visible";
-  
+
   // Posicionamiento al borde de la tarjeta
   const cardRect = card.getBoundingClientRect();
   const offset = 18;
-  
+
   let top;
   if (cardRect.top > actualTooltipHeight + offset) {
-      top = cardRect.top - actualTooltipHeight - offset;
-      tooltip.classList.remove("top");
+    top = cardRect.top - actualTooltipHeight - offset;
+    tooltip.classList.remove("top");
   } else {
-      top = cardRect.bottom + offset;
-      tooltip.classList.add("top");
+    top = cardRect.bottom + offset;
+    tooltip.classList.add("top");
   }
-  
+
   top = Math.max(0, Math.min(top, window.innerHeight - actualTooltipHeight));
-  
+
   tooltip.style.top = `${top}px`;
   tooltip.style.left = `${cardRect.left + cardRect.width / 2 - 125}px`;
   tooltip.style.display = "block";
-  
+
   // Almacena el tooltip actual y sus handlers
   currentTooltip = tooltip;
   currentTooltip.handleOutsideClick = (e) => {
-      if (!tooltip.contains(e.target) && !card.contains(e.target)) {
-          closeCurrentTooltip();
-      }
+    if (!tooltip.contains(e.target) && !card.contains(e.target)) {
+      closeCurrentTooltip();
+    }
   };
   currentTooltip.handleEscape = (e) => {
-      if (e.key === "Escape") {
-          closeCurrentTooltip();
-      }
+    if (e.key === "Escape") {
+      closeCurrentTooltip();
+    }
   };
-  
+
   closeBtn.addEventListener("click", closeCurrentTooltip);
   document.addEventListener("click", currentTooltip.handleOutsideClick);
   document.addEventListener("keydown", currentTooltip.handleEscape);
 }
 
 function startAutoScroll() {
-    const skillsTrack = document.getElementById("skills-track");
+  const skillsTrack = document.getElementById("skills-track");
 
-    function animate() {
-        if (!isPaused && !isDragging && !isTooltipOpen) {
-            currentTranslate -= 0.4; // Velocidad
-            if (Math.abs(currentTranslate) >= skillsTrack.scrollWidth / 2) {
-                currentTranslate = 0; // Resetea para infinito
-            }
-            skillsTrack.style.transform = `translateX(${currentTranslate}px)`;
-        }
-        autoScrollInterval = requestAnimationFrame(animate); // Llama al siguiente frame
+  function animate() {
+    if (!isPaused && !isDragging && !isTooltipOpen) {
+      currentTranslate -= 0.4; // Velocidad
+      if (Math.abs(currentTranslate) >= skillsTrack.scrollWidth / 2) {
+        currentTranslate = 0; // Resetea para infinito
+      }
+      skillsTrack.style.transform = `translateX(${currentTranslate}px)`;
     }
-    animate(); // Inicia la animación
+    autoScrollInterval = requestAnimationFrame(animate); // Llama al siguiente frame
+  }
+  animate(); // Inicia la animación
 }
 
 // Llama a initSkills cuando el DOM esté listo
@@ -695,14 +747,18 @@ function initProjects() {
   // Filter buttons
   document.querySelectorAll(".filter-btn").forEach((btn) => {
     btn.addEventListener("click", () => {
-      document.querySelectorAll(".filter-btn").forEach((b) => b.classList.remove("active"))
-      btn.classList.add("active")
-      currentFilter = btn.getAttribute(`data-${currentLanguage}`)
-      renderProjects()
-    })
-  })
-  currentFilter = document.querySelector(".filter-btn.active").getAttribute(`data-${currentLanguage}`)
-  renderProjects()
+      document
+        .querySelectorAll(".filter-btn")
+        .forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      currentFilter = btn.getAttribute(`data-${currentLanguage}`);
+      renderProjects();
+    });
+  });
+  currentFilter = document
+    .querySelector(".filter-btn.active")
+    .getAttribute(`data-${currentLanguage}`);
+  renderProjects();
 }
 
 function renderProjects() {
@@ -752,23 +808,23 @@ function renderProjects() {
           }
         </a>
       </div>
-    `
-    grid.appendChild(card)
-  })
+    `;
+    grid.appendChild(card);
+  });
 }
 
 // Education
 function initEducation() {
-  renderEducation()
+  renderEducation();
 }
 
 function renderEducation() {
-  const timeline = document.getElementById("education-timeline")
-  timeline.innerHTML = ""
+  const timeline = document.getElementById("education-timeline");
+  timeline.innerHTML = "";
 
   education.forEach((item) => {
-    const timelineItem = document.createElement("div")
-    timelineItem.className = "timeline-item"
+    const timelineItem = document.createElement("div");
+    timelineItem.className = "timeline-item";
     timelineItem.innerHTML = `
       <div class="timeline-icon">
         <svg class="icon" style="width: 2rem; height: 2rem;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -782,23 +838,23 @@ function renderEducation() {
         <p class="timeline-institution">${item.institution[currentLanguage]}</p>
         <p class="timeline-description">${item.description[currentLanguage]}</p>
       </div>
-    `
-    timeline.appendChild(timelineItem)
-  })
+    `;
+    timeline.appendChild(timelineItem);
+  });
 }
 
 // Experience
 function initExperience() {
-  renderExperience()
+  renderExperience();
 }
 
 function renderExperience() {
-  const list = document.getElementById("experience-list")
-  list.innerHTML = ""
+  const list = document.getElementById("experience-list");
+  list.innerHTML = "";
 
   experience.forEach((item) => {
-    const experienceItem = document.createElement("div")
-    experienceItem.className = "experience-item"
+    const experienceItem = document.createElement("div");
+    experienceItem.className = "experience-item";
     experienceItem.innerHTML = `
       <div class="experience-icon">
         <svg class="icon" style="width: 1.5rem; height: 1.5rem;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -819,19 +875,19 @@ function renderExperience() {
         </div>
         <p class="experience-description">${item.description[currentLanguage]}</p>
       </div>
-    `
-    list.appendChild(experienceItem)
-  })
+    `;
+    list.appendChild(experienceItem);
+  });
 }
 
 // Contact
 function initContact() {
-  renderContact()
+  renderContact();
 }
 
 function renderContact() {
-  const grid = document.getElementById("contact-grid")
-  grid.innerHTML = ""
+  const grid = document.getElementById("contact-grid");
+  grid.innerHTML = "";
 
   const icons = {
     mail: `<svg class="icon" style="width: 1.5rem; height: 1.5rem;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -850,15 +906,15 @@ function renderContact() {
                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                  <circle cx="12" cy="10" r="3"></circle>
                </svg>`,
-  }
+  };
 
   contactInfo.forEach((item) => {
-    const card = document.createElement(item.link ? "a" : "div")
-    card.className = "contact-card"
+    const card = document.createElement(item.link ? "a" : "div");
+    card.className = "contact-card";
     if (item.link) {
-      card.href = item.link
-      card.target = "_blank"
-      card.rel = "noopener noreferrer"
+      card.href = item.link;
+      card.target = "_blank";
+      card.rel = "noopener noreferrer";
     }
     card.innerHTML = `
       <div class="contact-header">
@@ -866,7 +922,7 @@ function renderContact() {
         <h3 class="contact-title">${item.title[currentLanguage]}</h3>
       </div>
       <p class="contact-value">${item.value}</p>
-    `
-    grid.appendChild(card)
-  })
+    `;
+    grid.appendChild(card);
+  });
 }

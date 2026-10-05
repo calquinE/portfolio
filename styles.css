@@ -46,12 +46,16 @@ html {
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", sans-serif;
   background-color: var(--background);
   color: var(--foreground);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  transition: background-color 0.3s, color 0.3s;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 }
 
 .container {
@@ -402,59 +406,59 @@ body {
 
 /* Skills Section */
 .skills-carousel {
-    position: relative;
-    overflow: hidden;
-    width: 100%;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
 }
 
 .skills-track {
-    display: flex;
-    gap: 1.5rem;
-    will-change: transform;
+  display: flex;
+  gap: 1.5rem;
+  will-change: transform;
 }
 
 .skill-card {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--card);
-    border-radius: var(--radius);
-    padding: 2rem;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-    min-width: 10rem;
-    flex-shrink: 0;
-    margin: 1rem 0;
-    transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--card);
+  border-radius: var(--radius);
+  padding: 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  min-width: 10rem;
+  flex-shrink: 0;
+  margin: 1rem 0;
+  transition: all 0.3s ease;
 }
 
 .skill-icon {
-    width: 50px;
-    height: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto 0.5rem;
-  }
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 0.5rem;
+}
 
-  .skill-icon img {
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    filter: none;
+.skill-icon img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: none;
 }
 
 .dark .skill-icon img {
-    filter: drop-shadow(0 0 1.5px rgba(255, 255, 255, 0.4));
+  filter: drop-shadow(0 0 1.5px rgba(255, 255, 255, 0.4));
 }
 
 .skill-name {
-    font-weight: 500;
+  font-weight: 500;
 }
 
 /* Skill Tooltip */
 .skill-tooltip {
-  display: none; 
+  display: none;
   position: fixed;
   z-index: 1000;
   max-width: 250px;
@@ -968,8 +972,8 @@ body {
 }
 
 @media (max-width: 767px) {
-    .skill-card {
-        min-width: 8rem; /* Más pequeño en mobile para caber más */
-        padding: 1.5rem;
-    }
+  .skill-card {
+    min-width: 8rem; /* Más pequeño en mobile para caber más */
+    padding: 1.5rem;
+  }
 }
